@@ -42,4 +42,5 @@ Route::middleware(['auth'])->group(function () {
     Route::resource('flujoefectivodiarios', \App\Http\Controllers\FlujoefectivodiarioController::class);
     Route::resource('preciotelasucursals', \App\Http\Controllers\PreciotelasucursalController::class);
     Route::resource('detalletransaccions', \App\Http\Controllers\DetalletransaccionController::class);
+    Route::resource('users', App\Http\Controllers\UserController::class);
 });

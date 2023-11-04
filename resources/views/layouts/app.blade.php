@@ -49,14 +49,17 @@ $emp = 1;
                                     <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
                                 </li>
                             @endif
-                    
+                            @if (Route::has('register'))
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Usuarios') }}</a>
+                                </li>
+                            @endif
                         @else
                             @if ($emp == 1)
-                                @if (Route::has('register'))
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="{{ route('register') }}">{{ __('Usuarios') }}</a>
-                                    </li>
-                                @endif
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('users.index') }}">usuarios</a>
+                                </li>
+
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{ route('cargos.index') }}">Cargos</a>
                                 </li>
