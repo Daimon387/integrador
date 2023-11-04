@@ -25,8 +25,8 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::middleware(['auth'])->group(function () {
     Route::resource('cargos', \App\Http\Controllers\CargoController::class);
     Route::resource('cintas', \App\Http\Controllers\CintaController::class);
-    Route::resource('productos', \App\Http\Controllers\ProductoController::class);
-    Route::resource('productocolores', \App\Http\Controllers\ProductocoloreController::class);
+    Route::resource('telas', \App\Http\Controllers\TelaController::class);
+    Route::resource('telacolores', \App\Http\Controllers\TelacoloreController::class);
     Route::resource('personas', \App\Http\Controllers\PersonaController::class);
     Route::resource('clientes', \App\Http\Controllers\ClienteController::class);
     Route::resource('empleados', \App\Http\Controllers\EmpleadoController::class);

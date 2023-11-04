@@ -56,10 +56,10 @@
                             <a class="nav-link" href="{{route('cintas.index')}}">Cintas</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{route('productos.index')}}">Productos</a>
+                            <a class="nav-link" href="{{route('telas.index')}}">Telas</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{route('productocolores.index')}}">Producto colores</a>
+                            <a class="nav-link" href="{{route('telacolores.index')}}">Tela colores</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="{{route('personas.index')}}">Personas</a>
