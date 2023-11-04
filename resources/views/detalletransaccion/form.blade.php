@@ -2,14 +2,14 @@
     <div class="box-body">
         
         <div class="form-group">
-            {{ Form::label('transaccion') }}
-            {{ Form::text('transaccion', $detalletransaccion->transaccion, ['class' => 'form-control' . ($errors->has('transaccion') ? ' is-invalid' : ''), 'placeholder' => 'Transaccion']) }}
-            {!! $errors->first('transaccion', '<div class="invalid-feedback">:message</div>') !!}
+            {{ Form::label('transaccion_id') }}
+            {{ Form::text('transaccion_id', $detalletransaccion->transaccion_id, ['class' => 'form-control' . ($errors->has('transaccion_id') ? ' is-invalid' : ''), 'placeholder' => 'Transaccion Id']) }}
+            {!! $errors->first('transaccion_id', '<div class="invalid-feedback">:message</div>') !!}
         </div>
         <div class="form-group">
-            {{ Form::label('inventario') }}
-            {{ Form::text('inventario', $detalletransaccion->inventario, ['class' => 'form-control' . ($errors->has('inventario') ? ' is-invalid' : ''), 'placeholder' => 'Inventario']) }}
-            {!! $errors->first('inventario', '<div class="invalid-feedback">:message</div>') !!}
+            {{ Form::label('inventario_id') }}
+            {{ Form::text('inventario_id', $detalletransaccion->inventario_id, ['class' => 'form-control' . ($errors->has('inventario_id') ? ' is-invalid' : ''), 'placeholder' => 'Inventario Id']) }}
+            {!! $errors->first('inventario_id', '<div class="invalid-feedback">:message</div>') !!}
         </div>
         <div class="form-group">
             {{ Form::label('cantidad') }}

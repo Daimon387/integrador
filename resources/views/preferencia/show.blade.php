@@ -21,12 +21,12 @@
                     <div class="card-body">
                         
                         <div class="form-group">
-                            <strong>Cliente:</strong>
-                            {{ $preferencia->cliente }}
+                            <strong>Cliente Id:</strong>
+                            {{ $preferencia->cliente_id }}
                         </div>
                         <div class="form-group">
-                            <strong>Tela:</strong>
-                            {{ $preferencia->tela }}
+                            <strong>Tela Id:</strong>
+                            {{ $preferencia->tela_id }}
                         </div>
 
                     </div>

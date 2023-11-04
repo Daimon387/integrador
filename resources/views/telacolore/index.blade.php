@@ -37,12 +37,12 @@
                                         <th>No</th>
                                         
 										<th>Nombre</th>
+										<th>Cinta Id</th>
+										<th>Tela Id</th>
+										<th>Fecha Llegada</th>
 										<th>Detalle</th>
 										<th>Nro Rollo</th>
 										<th>Numero</th>
-										<th>Cinta</th>
-										<th>Producto</th>
-										<th>Fecha Llegada</th>
 
                                         <th></th>
                                     </tr>
@@ -53,12 +53,12 @@
                                             <td>{{ ++$i }}</td>
                                             
 											<td>{{ $telacolore->nombre }}</td>
+											<td>{{ $telacolore->cinta_id }}</td>
+											<td>{{ $telacolore->tela_id }}</td>
+											<td>{{ $telacolore->fecha_llegada }}</td>
 											<td>{{ $telacolore->detalle }}</td>
 											<td>{{ $telacolore->nro_rollo }}</td>
 											<td>{{ $telacolore->numero }}</td>
-											<td>{{ $telacolore->cinta }}</td>
-											<td>{{ $telacolore->producto }}</td>
-											<td>{{ $telacolore->fecha_llegada }}</td>
 
                                             <td>
                                                 <form action="{{ route('telacolores.destroy',$telacolore->id) }}" method="POST">

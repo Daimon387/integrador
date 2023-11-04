@@ -13,10 +13,10 @@ return new class extends Migration
     {
         Schema::create('inventarios', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('sucursal')->unique();
-            $table->foreign('sucursal')->references('id')->on('sucursals')->onDelete('cascade');
-            $table->unsignedBigInteger('producto');
-            $table->foreign('producto')->references('id')->on('telacolores')->onDelete('cascade');
+            $table->unsignedBigInteger('sucursal_id')->unique();
+            $table->foreign('sucursal_id')->references('id')->on('sucursals')->onDelete('cascade');
+            $table->unsignedBigInteger('tela_id');
+            $table->foreign('tela_id')->references('id')->on('telacolores')->onDelete('cascade');
             $table->integer('cantidad');
             $table->float('metraje');
             $table->float('precio_metro_diferente')->nullable();

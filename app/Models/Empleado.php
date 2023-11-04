@@ -8,9 +8,9 @@ use Illuminate\Database\Eloquent\Model;
  * Class Empleado
  *
  * @property $id
- * @property $datos
- * @property $usuario
- * @property $cargo
+ * @property $persona_id
+ * @property $usuario_id
+ * @property $cargo_id
  * @property $fecha_contratacion
  * @property $sueldo
  * @property $created_at
@@ -29,9 +29,9 @@ class Empleado extends Model
 {
     
     static $rules = [
-		'datos' => 'required',
-		'usuario' => 'required',
-		'cargo' => 'required',
+		'persona_id' => 'required',
+		'usuario_id' => 'required',
+		'cargo_id' => 'required',
 		'sueldo' => 'required',
     ];
 
@@ -42,7 +42,7 @@ class Empleado extends Model
      *
      * @var array
      */
-    protected $fillable = ['datos','usuario','cargo','fecha_contratacion','sueldo'];
+    protected $fillable = ['persona_id','usuario_id','cargo_id','fecha_contratacion','sueldo'];
 
 
     /**
@@ -50,7 +50,7 @@ class Empleado extends Model
      */
     public function asistenciadiarias()
     {
-        return $this->hasMany('App\Models\Asistenciadiaria', 'empleado', 'id');
+        return $this->hasMany('App\Models\Asistenciadiaria', 'empleado_id', 'id');
     }
     
     /**
@@ -58,7 +58,7 @@ class Empleado extends Model
      */
     public function cargo()
     {
-        return $this->hasOne('App\Models\Cargo', 'id', 'cargo');
+        return $this->hasOne('App\Models\Cargo', 'id', 'cargo_id');
     }
     
     /**
@@ -66,7 +66,7 @@ class Empleado extends Model
      */
     public function persona()
     {
-        return $this->hasOne('App\Models\Persona', 'id', 'datos');
+        return $this->hasOne('App\Models\Persona', 'id', 'persona_id');
     }
     
     /**
@@ -74,7 +74,7 @@ class Empleado extends Model
      */
     public function sucursals()
     {
-        return $this->hasMany('App\Models\Sucursal', 'administrador', 'id');
+        return $this->hasMany('App\Models\Sucursal', 'administrador_id', 'id');
     }
     
     /**
@@ -82,7 +82,7 @@ class Empleado extends Model
      */
     public function transacciones()
     {
-        return $this->hasMany('App\Models\Transaccione', 'empleado', 'id');
+        return $this->hasMany('App\Models\Transaccione', 'empleado_id', 'id');
     }
     
     /**
@@ -90,7 +90,7 @@ class Empleado extends Model
      */
     public function user()
     {
-        return $this->hasOne('App\Models\User', 'id', 'usuario');
+        return $this->hasOne('App\Models\User', 'id', 'usuario_id');
     }
     
 

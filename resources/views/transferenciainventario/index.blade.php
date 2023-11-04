@@ -39,7 +39,7 @@
 										<th>Fecha Transaccion</th>
 										<th>Cantidad Transferida</th>
 										<th>Sucursal Bodega Origen</th>
-										<th>Inventario</th>
+										<th>Inventario Id</th>
 										<th>Estado</th>
 
                                         <th></th>
@@ -53,7 +53,7 @@
 											<td>{{ $transferenciainventario->fecha_transaccion }}</td>
 											<td>{{ $transferenciainventario->cantidad_transferida }}</td>
 											<td>{{ $transferenciainventario->sucursal_bodega_origen }}</td>
-											<td>{{ $transferenciainventario->inventario }}</td>
+											<td>{{ $transferenciainventario->inventario_id }}</td>
 											<td>{{ $transferenciainventario->estado }}</td>
 
                                             <td>

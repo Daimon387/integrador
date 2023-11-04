@@ -15,11 +15,11 @@ return new class extends Migration
             $table->id();
             $table->unsignedBigInteger('sucursal_bodega');
             $table->foreign('sucursal_bodega')->references('id')->on('sucursals')->onDelete('cascade');
-            $table->unsignedBigInteger('transaccion');
-            $table->foreign('transaccion')->references('id')->on('transacciones')->onDelete('cascade');
+            $table->unsignedBigInteger('transaccion_id');
+            $table->foreign('transaccion_id')->references('id')->on('transacciones')->onDelete('cascade');
             $table->unsignedBigInteger('metodo_pago');
             $table->foreign('metodo_pago')->references('id')->on('metodopagos')->onDelete('cascade');
-            $table->timestamp('fecha');
+            $table->date('fecha');
             $table->float('monto_pagado');
             $table->timestamps();
         });

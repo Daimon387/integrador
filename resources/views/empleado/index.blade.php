@@ -36,9 +36,9 @@
                                     <tr>
                                         <th>No</th>
                                         
-										<th>Datos</th>
-										<th>Usuario</th>
-										<th>Cargo</th>
+										<th>Persona Id</th>
+										<th>Usuario Id</th>
+										<th>Cargo Id</th>
 										<th>Fecha Contratacion</th>
 										<th>Sueldo</th>
 
@@ -50,9 +50,9 @@
                                         <tr>
                                             <td>{{ ++$i }}</td>
                                             
-											<td>{{ $empleado->datos }}</td>
-											<td>{{ $empleado->usuario }}</td>
-											<td>{{ $empleado->cargo }}</td>
+											<td>{{ $empleado->persona_id }}</td>
+											<td>{{ $empleado->usuario_id }}</td>
+											<td>{{ $empleado->cargo_id }}</td>
 											<td>{{ $empleado->fecha_contratacion }}</td>
 											<td>{{ $empleado->sueldo }}</td>
 

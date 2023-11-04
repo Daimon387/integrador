@@ -42,7 +42,7 @@ class Cinta extends Model
      */
     public function telacolores()
     {
-        return $this->hasMany('App\Models\Telacolore', 'cinta', 'id');
+        return $this->hasMany('App\Models\Telacolore', 'cinta_id', 'id');
     }
     
 

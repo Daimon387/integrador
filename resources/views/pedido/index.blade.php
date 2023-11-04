@@ -36,7 +36,7 @@
                                     <tr>
                                         <th>No</th>
                                         
-										<th>Transaccion</th>
+										<th>Transaccion Id</th>
 										<th>Nro Factura</th>
 										<th>Lugar Destino</th>
 										<th>Detalle</th>
@@ -50,7 +50,7 @@
                                         <tr>
                                             <td>{{ ++$i }}</td>
                                             
-											<td>{{ $pedido->transaccion }}</td>
+											<td>{{ $pedido->transaccion_id }}</td>
 											<td>{{ $pedido->nro_factura }}</td>
 											<td>{{ $pedido->lugar_destino }}</td>
 											<td>{{ $pedido->detalle }}</td>

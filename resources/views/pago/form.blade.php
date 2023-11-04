@@ -7,9 +7,9 @@
             {!! $errors->first('sucursal_bodega', '<div class="invalid-feedback">:message</div>') !!}
         </div>
         <div class="form-group">
-            {{ Form::label('transaccion') }}
-            {{ Form::text('transaccion', $pago->transaccion, ['class' => 'form-control' . ($errors->has('transaccion') ? ' is-invalid' : ''), 'placeholder' => 'Transaccion']) }}
-            {!! $errors->first('transaccion', '<div class="invalid-feedback">:message</div>') !!}
+            {{ Form::label('transaccion_id') }}
+            {{ Form::text('transaccion_id', $pago->transaccion_id, ['class' => 'form-control' . ($errors->has('transaccion_id') ? ' is-invalid' : ''), 'placeholder' => 'Transaccion Id']) }}
+            {!! $errors->first('transaccion_id', '<div class="invalid-feedback">:message</div>') !!}
         </div>
         <div class="form-group">
             {{ Form::label('metodo_pago') }}

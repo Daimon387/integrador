@@ -13,8 +13,8 @@ return new class extends Migration
     {
         Schema::create('pedidos', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('transaccion');
-            $table->foreign('transaccion')->references('id')->on('transacciones')->onDelete('cascade');
+            $table->unsignedBigInteger('transaccion_id');
+            $table->foreign('transaccion_id')->references('id')->on('transacciones')->onDelete('cascade');
             $table->string('nro_factura');
             $table->string('lugar_destino');
             $table->string('detalle')->nullable();

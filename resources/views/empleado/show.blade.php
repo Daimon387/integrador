@@ -21,16 +21,16 @@
                     <div class="card-body">
                         
                         <div class="form-group">
-                            <strong>Datos:</strong>
-                            {{ $empleado->datos }}
+                            <strong>Persona Id:</strong>
+                            {{ $empleado->persona_id }}
                         </div>
                         <div class="form-group">
-                            <strong>Usuario:</strong>
-                            {{ $empleado->usuario }}
+                            <strong>Usuario Id:</strong>
+                            {{ $empleado->usuario_id }}
                         </div>
                         <div class="form-group">
-                            <strong>Cargo:</strong>
-                            {{ $empleado->cargo }}
+                            <strong>Cargo Id:</strong>
+                            {{ $empleado->cargo_id }}
                         </div>
                         <div class="form-group">
                             <strong>Fecha Contratacion:</strong>

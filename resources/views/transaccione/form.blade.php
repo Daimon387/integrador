@@ -7,14 +7,14 @@
             {!! $errors->first('sucursal_bodega', '<div class="invalid-feedback">:message</div>') !!}
         </div>
         <div class="form-group">
-            {{ Form::label('empleado') }}
-            {{ Form::text('empleado', $transaccione->empleado, ['class' => 'form-control' . ($errors->has('empleado') ? ' is-invalid' : ''), 'placeholder' => 'Empleado']) }}
-            {!! $errors->first('empleado', '<div class="invalid-feedback">:message</div>') !!}
+            {{ Form::label('empleado_id') }}
+            {{ Form::text('empleado_id', $transaccione->empleado_id, ['class' => 'form-control' . ($errors->has('empleado_id') ? ' is-invalid' : ''), 'placeholder' => 'Empleado Id']) }}
+            {!! $errors->first('empleado_id', '<div class="invalid-feedback">:message</div>') !!}
         </div>
         <div class="form-group">
-            {{ Form::label('cliente') }}
-            {{ Form::text('cliente', $transaccione->cliente, ['class' => 'form-control' . ($errors->has('cliente') ? ' is-invalid' : ''), 'placeholder' => 'Cliente']) }}
-            {!! $errors->first('cliente', '<div class="invalid-feedback">:message</div>') !!}
+            {{ Form::label('cliente_id') }}
+            {{ Form::text('cliente_id', $transaccione->cliente_id, ['class' => 'form-control' . ($errors->has('cliente_id') ? ' is-invalid' : ''), 'placeholder' => 'Cliente Id']) }}
+            {!! $errors->first('cliente_id', '<div class="invalid-feedback">:message</div>') !!}
         </div>
         <div class="form-group">
             {{ Form::label('fecha') }}

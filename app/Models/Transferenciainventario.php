@@ -11,7 +11,7 @@ use Illuminate\Database\Eloquent\Model;
  * @property $fecha_transaccion
  * @property $cantidad_transferida
  * @property $sucursal_bodega_origen
- * @property $inventario
+ * @property $inventario_id
  * @property $estado
  * @property $created_at
  * @property $updated_at
@@ -28,7 +28,7 @@ class Transferenciainventario extends Model
 		'fecha_transaccion' => 'required',
 		'cantidad_transferida' => 'required',
 		'sucursal_bodega_origen' => 'required',
-		'inventario' => 'required',
+		'inventario_id' => 'required',
 		'estado' => 'required',
     ];
 
@@ -39,7 +39,7 @@ class Transferenciainventario extends Model
      *
      * @var array
      */
-    protected $fillable = ['fecha_transaccion','cantidad_transferida','sucursal_bodega_origen','inventario','estado'];
+    protected $fillable = ['fecha_transaccion','cantidad_transferida','sucursal_bodega_origen','inventario_id','estado'];
 
 
     /**
@@ -47,7 +47,7 @@ class Transferenciainventario extends Model
      */
     public function inventario()
     {
-        return $this->hasOne('App\Models\Inventario', 'id', 'inventario');
+        return $this->hasOne('App\Models\Inventario', 'id', 'inventario_id');
     }
     
     /**

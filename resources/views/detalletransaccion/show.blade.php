@@ -21,12 +21,12 @@
                     <div class="card-body">
                         
                         <div class="form-group">
-                            <strong>Transaccion:</strong>
-                            {{ $detalletransaccion->transaccion }}
+                            <strong>Transaccion Id:</strong>
+                            {{ $detalletransaccion->transaccion_id }}
                         </div>
                         <div class="form-group">
-                            <strong>Inventario:</strong>
-                            {{ $detalletransaccion->inventario }}
+                            <strong>Inventario Id:</strong>
+                            {{ $detalletransaccion->inventario_id }}
                         </div>
                         <div class="form-group">
                             <strong>Cantidad:</strong>

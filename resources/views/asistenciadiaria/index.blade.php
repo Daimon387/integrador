@@ -37,7 +37,7 @@
                                         <th>No</th>
                                         
 										<th>Sucursal Bodega</th>
-										<th>Empleado</th>
+										<th>Empleado Id</th>
 										<th>Fecha Llegada</th>
 										<th>Fecha Salida</th>
 
@@ -50,7 +50,7 @@
                                             <td>{{ ++$i }}</td>
                                             
 											<td>{{ $asistenciadiaria->sucursal_bodega }}</td>
-											<td>{{ $asistenciadiaria->empleado }}</td>
+											<td>{{ $asistenciadiaria->empleado_id }}</td>
 											<td>{{ $asistenciadiaria->fecha_llegada }}</td>
 											<td>{{ $asistenciadiaria->fecha_salida }}</td>
 

@@ -37,7 +37,7 @@
                                         <th>No</th>
                                         
 										<th>Sucursal Bodega</th>
-										<th>Transaccion</th>
+										<th>Transaccion Id</th>
 										<th>Metodo Pago</th>
 										<th>Fecha</th>
 										<th>Monto Pagado</th>
@@ -51,7 +51,7 @@
                                             <td>{{ ++$i }}</td>
                                             
 											<td>{{ $pago->sucursal_bodega }}</td>
-											<td>{{ $pago->transaccion }}</td>
+											<td>{{ $pago->transaccion_id }}</td>
 											<td>{{ $pago->metodo_pago }}</td>
 											<td>{{ $pago->fecha }}</td>
 											<td>{{ $pago->monto_pagado }}</td>

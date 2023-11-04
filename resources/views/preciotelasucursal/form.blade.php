@@ -7,9 +7,9 @@
             {!! $errors->first('sucursal_bodega', '<div class="invalid-feedback">:message</div>') !!}
         </div>
         <div class="form-group">
-            {{ Form::label('tela') }}
-            {{ Form::text('tela', $preciotelasucursal->tela, ['class' => 'form-control' . ($errors->has('tela') ? ' is-invalid' : ''), 'placeholder' => 'Tela']) }}
-            {!! $errors->first('tela', '<div class="invalid-feedback">:message</div>') !!}
+            {{ Form::label('tela_id') }}
+            {{ Form::text('tela_id', $preciotelasucursal->tela_id, ['class' => 'form-control' . ($errors->has('tela_id') ? ' is-invalid' : ''), 'placeholder' => 'Tela Id']) }}
+            {!! $errors->first('tela_id', '<div class="invalid-feedback">:message</div>') !!}
         </div>
         <div class="form-group">
             {{ Form::label('precio_metro') }}

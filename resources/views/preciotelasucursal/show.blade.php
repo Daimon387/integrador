@@ -25,8 +25,8 @@
                             {{ $preciotelasucursal->sucursal_bodega }}
                         </div>
                         <div class="form-group">
-                            <strong>Tela:</strong>
-                            {{ $preciotelasucursal->tela }}
+                            <strong>Tela Id:</strong>
+                            {{ $preciotelasucursal->tela_id }}
                         </div>
                         <div class="form-group">
                             <strong>Precio Metro:</strong>

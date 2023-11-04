@@ -17,9 +17,9 @@
             {!! $errors->first('sucursal_bodega_origen', '<div class="invalid-feedback">:message</div>') !!}
         </div>
         <div class="form-group">
-            {{ Form::label('inventario') }}
-            {{ Form::text('inventario', $transferenciainventario->inventario, ['class' => 'form-control' . ($errors->has('inventario') ? ' is-invalid' : ''), 'placeholder' => 'Inventario']) }}
-            {!! $errors->first('inventario', '<div class="invalid-feedback">:message</div>') !!}
+            {{ Form::label('inventario_id') }}
+            {{ Form::text('inventario_id', $transferenciainventario->inventario_id, ['class' => 'form-control' . ($errors->has('inventario_id') ? ' is-invalid' : ''), 'placeholder' => 'Inventario Id']) }}
+            {!! $errors->first('inventario_id', '<div class="invalid-feedback">:message</div>') !!}
         </div>
         <div class="form-group">
             {{ Form::label('estado') }}

@@ -21,8 +21,8 @@
                     <div class="card-body">
                         
                         <div class="form-group">
-                            <strong>Transaccion:</strong>
-                            {{ $pedido->transaccion }}
+                            <strong>Transaccion Id:</strong>
+                            {{ $pedido->transaccion_id }}
                         </div>
                         <div class="form-group">
                             <strong>Nro Factura:</strong>

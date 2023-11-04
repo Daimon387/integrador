@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
  * Class Cliente
  *
  * @property $id
- * @property $datos_personales
+ * @property $persona_id
  * @property $fecha_inicio_compra
  * @property $giro_dinero
  * @property $deuda
@@ -25,7 +25,7 @@ class Cliente extends Model
 {
     
     static $rules = [
-		'datos_personales' => 'required',
+		'persona_id' => 'required',
     ];
 
     protected $perPage = 20;
@@ -35,7 +35,7 @@ class Cliente extends Model
      *
      * @var array
      */
-    protected $fillable = ['datos_personales','fecha_inicio_compra','giro_dinero','deuda'];
+    protected $fillable = ['persona_id','fecha_inicio_compra','giro_dinero','deuda'];
 
 
     /**
@@ -43,7 +43,7 @@ class Cliente extends Model
      */
     public function persona()
     {
-        return $this->hasOne('App\Models\Persona', 'id', 'datos_personales');
+        return $this->hasOne('App\Models\Persona', 'id', 'persona_id');
     }
     
     /**
@@ -51,7 +51,7 @@ class Cliente extends Model
      */
     public function preferencias()
     {
-        return $this->hasMany('App\Models\Preferencia', 'cliente', 'id');
+        return $this->hasMany('App\Models\Preferencia', 'cliente_id', 'id');
     }
     
     /**
@@ -59,7 +59,7 @@ class Cliente extends Model
      */
     public function transacciones()
     {
-        return $this->hasMany('App\Models\Transaccione', 'cliente', 'id');
+        return $this->hasMany('App\Models\Transaccione', 'cliente_id', 'id');
     }
     
 

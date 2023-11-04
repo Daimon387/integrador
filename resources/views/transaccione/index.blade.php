@@ -37,8 +37,8 @@
                                         <th>No</th>
                                         
 										<th>Sucursal Bodega</th>
-										<th>Empleado</th>
-										<th>Cliente</th>
+										<th>Empleado Id</th>
+										<th>Cliente Id</th>
 										<th>Fecha</th>
 										<th>Total Venta</th>
 										<th>Productos Retirados</th>
@@ -57,8 +57,8 @@
                                             <td>{{ ++$i }}</td>
                                             
 											<td>{{ $transaccione->sucursal_bodega }}</td>
-											<td>{{ $transaccione->empleado }}</td>
-											<td>{{ $transaccione->cliente }}</td>
+											<td>{{ $transaccione->empleado_id }}</td>
+											<td>{{ $transaccione->cliente_id }}</td>
 											<td>{{ $transaccione->fecha }}</td>
 											<td>{{ $transaccione->total_venta }}</td>
 											<td>{{ $transaccione->productos_retirados }}</td>

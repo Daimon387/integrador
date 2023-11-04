@@ -9,12 +9,12 @@ use Illuminate\Database\Eloquent\Model;
  *
  * @property $id
  * @property $nombre
+ * @property $cinta_id
+ * @property $tela_id
+ * @property $fecha_llegada
  * @property $detalle
  * @property $nro_rollo
  * @property $numero
- * @property $cinta
- * @property $producto
- * @property $fecha_llegada
  * @property $created_at
  * @property $updated_at
  *
@@ -29,8 +29,8 @@ class Telacolore extends Model
     
     static $rules = [
 		'nombre' => 'required',
-		'cinta' => 'required',
-		'producto' => 'required',
+		'cinta_id' => 'required',
+		'tela_id' => 'required',
 		'fecha_llegada' => 'required',
     ];
 
@@ -41,7 +41,7 @@ class Telacolore extends Model
      *
      * @var array
      */
-    protected $fillable = ['nombre','detalle','nro_rollo','numero','cinta','producto','fecha_llegada'];
+    protected $fillable = ['nombre','cinta_id','tela_id','fecha_llegada','detalle','nro_rollo','numero'];
 
 
     /**
@@ -49,7 +49,7 @@ class Telacolore extends Model
      */
     public function cinta()
     {
-        return $this->hasOne('App\Models\Cinta', 'id', 'cinta');
+        return $this->hasOne('App\Models\Cinta', 'id', 'cinta_id');
     }
     
     /**
@@ -57,7 +57,7 @@ class Telacolore extends Model
      */
     public function inventarios()
     {
-        return $this->hasMany('App\Models\Inventario', 'producto', 'id');
+        return $this->hasMany('App\Models\Inventario', 'tela_id', 'id');
     }
     
     /**
@@ -65,7 +65,7 @@ class Telacolore extends Model
      */
     public function tela()
     {
-        return $this->hasOne('App\Models\Tela', 'id', 'producto');
+        return $this->hasOne('App\Models\Tela', 'id', 'tela_id');
     }
     
 

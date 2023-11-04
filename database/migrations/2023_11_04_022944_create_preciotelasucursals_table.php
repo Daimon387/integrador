@@ -15,8 +15,8 @@ return new class extends Migration
             $table->id();
             $table->unsignedBigInteger('sucursal_bodega');
             $table->foreign('sucursal_bodega')->references('id')->on('sucursals')->onDelete('cascade');
-            $table->unsignedBigInteger('tela');
-            $table->foreign('tela')->references('id')->on('telas')->onDelete('cascade');
+            $table->unsignedBigInteger('tela_id');
+            $table->foreign('tela_id')->references('id')->on('telas')->onDelete('cascade');
             $table->float('precio_metro');
             $table->timestamps();
         });

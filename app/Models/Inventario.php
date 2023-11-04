@@ -8,8 +8,8 @@ use Illuminate\Database\Eloquent\Model;
  * Class Inventario
  *
  * @property $id
- * @property $sucursal
- * @property $producto
+ * @property $sucursal_id
+ * @property $tela_id
  * @property $cantidad
  * @property $metraje
  * @property $precio_metro_diferente
@@ -17,6 +17,7 @@ use Illuminate\Database\Eloquent\Model;
  * @property $created_at
  * @property $updated_at
  *
+ * @property Detalletransaccion[] $detalletransaccions
  * @property Sucursal $sucursal
  * @property Telacolore $telacolore
  * @property Transferenciainventario[] $transferenciainventarios
@@ -27,8 +28,8 @@ class Inventario extends Model
 {
     
     static $rules = [
-		'sucursal' => 'required',
-		'producto' => 'required',
+		'sucursal_id' => 'required',
+		'tela_id' => 'required',
 		'cantidad' => 'required',
 		'metraje' => 'required',
     ];
@@ -40,15 +41,23 @@ class Inventario extends Model
      *
      * @var array
      */
-    protected $fillable = ['sucursal','producto','cantidad','metraje','precio_metro_diferente','detalle'];
+    protected $fillable = ['sucursal_id','tela_id','cantidad','metraje','precio_metro_diferente','detalle'];
 
 
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function detalletransaccions()
+    {
+        return $this->hasMany('App\Models\Detalletransaccion', 'inventario_id', 'id');
+    }
+    
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasOne
      */
     public function sucursal()
     {
-        return $this->hasOne('App\Models\Sucursal', 'id', 'sucursal');
+        return $this->hasOne('App\Models\Sucursal', 'id', 'sucursal_id');
     }
     
     /**
@@ -56,7 +65,7 @@ class Inventario extends Model
      */
     public function telacolore()
     {
-        return $this->hasOne('App\Models\Telacolore', 'id', 'producto');
+        return $this->hasOne('App\Models\Telacolore', 'id', 'tela_id');
     }
     
     /**
@@ -64,7 +73,7 @@ class Inventario extends Model
      */
     public function transferenciainventarios()
     {
-        return $this->hasMany('App\Models\Transferenciainventario', 'inventario', 'id');
+        return $this->hasMany('App\Models\Transferenciainventario', 'inventario_id', 'id');
     }
     
 

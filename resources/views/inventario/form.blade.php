@@ -2,14 +2,14 @@
     <div class="box-body">
         
         <div class="form-group">
-            {{ Form::label('sucursal') }}
-            {{ Form::text('sucursal', $inventario->sucursal, ['class' => 'form-control' . ($errors->has('sucursal') ? ' is-invalid' : ''), 'placeholder' => 'Sucursal']) }}
-            {!! $errors->first('sucursal', '<div class="invalid-feedback">:message</div>') !!}
+            {{ Form::label('sucursal_id') }}
+            {{ Form::text('sucursal_id', $inventario->sucursal_id, ['class' => 'form-control' . ($errors->has('sucursal_id') ? ' is-invalid' : ''), 'placeholder' => 'Sucursal Id']) }}
+            {!! $errors->first('sucursal_id', '<div class="invalid-feedback">:message</div>') !!}
         </div>
         <div class="form-group">
-            {{ Form::label('producto') }}
-            {{ Form::text('producto', $inventario->producto, ['class' => 'form-control' . ($errors->has('producto') ? ' is-invalid' : ''), 'placeholder' => 'Producto']) }}
-            {!! $errors->first('producto', '<div class="invalid-feedback">:message</div>') !!}
+            {{ Form::label('tela_id') }}
+            {{ Form::text('tela_id', $inventario->tela_id, ['class' => 'form-control' . ($errors->has('tela_id') ? ' is-invalid' : ''), 'placeholder' => 'Tela Id']) }}
+            {!! $errors->first('tela_id', '<div class="invalid-feedback">:message</div>') !!}
         </div>
         <div class="form-group">
             {{ Form::label('cantidad') }}

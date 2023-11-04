@@ -7,6 +7,21 @@
             {!! $errors->first('nombre', '<div class="invalid-feedback">:message</div>') !!}
         </div>
         <div class="form-group">
+            {{ Form::label('cinta_id') }}
+            {{ Form::text('cinta_id', $telacolore->cinta_id, ['class' => 'form-control' . ($errors->has('cinta_id') ? ' is-invalid' : ''), 'placeholder' => 'Cinta Id']) }}
+            {!! $errors->first('cinta_id', '<div class="invalid-feedback">:message</div>') !!}
+        </div>
+        <div class="form-group">
+            {{ Form::label('tela_id') }}
+            {{ Form::text('tela_id', $telacolore->tela_id, ['class' => 'form-control' . ($errors->has('tela_id') ? ' is-invalid' : ''), 'placeholder' => 'Tela Id']) }}
+            {!! $errors->first('tela_id', '<div class="invalid-feedback">:message</div>') !!}
+        </div>
+        <div class="form-group">
+            {{ Form::label('fecha_llegada') }}
+            {{ Form::text('fecha_llegada', $telacolore->fecha_llegada, ['class' => 'form-control' . ($errors->has('fecha_llegada') ? ' is-invalid' : ''), 'placeholder' => 'Fecha Llegada']) }}
+            {!! $errors->first('fecha_llegada', '<div class="invalid-feedback">:message</div>') !!}
+        </div>
+        <div class="form-group">
             {{ Form::label('detalle') }}
             {{ Form::text('detalle', $telacolore->detalle, ['class' => 'form-control' . ($errors->has('detalle') ? ' is-invalid' : ''), 'placeholder' => 'Detalle']) }}
             {!! $errors->first('detalle', '<div class="invalid-feedback">:message</div>') !!}
@@ -20,21 +35,6 @@
             {{ Form::label('numero') }}
             {{ Form::text('numero', $telacolore->numero, ['class' => 'form-control' . ($errors->has('numero') ? ' is-invalid' : ''), 'placeholder' => 'Numero']) }}
             {!! $errors->first('numero', '<div class="invalid-feedback">:message</div>') !!}
-        </div>
-        <div class="form-group">
-            {{ Form::label('cinta') }}
-            {{ Form::text('cinta', $telacolore->cinta, ['class' => 'form-control' . ($errors->has('cinta') ? ' is-invalid' : ''), 'placeholder' => 'Cinta']) }}
-            {!! $errors->first('cinta', '<div class="invalid-feedback">:message</div>') !!}
-        </div>
-        <div class="form-group">
-            {{ Form::label('producto') }}
-            {{ Form::text('producto', $telacolore->producto, ['class' => 'form-control' . ($errors->has('producto') ? ' is-invalid' : ''), 'placeholder' => 'Producto']) }}
-            {!! $errors->first('producto', '<div class="invalid-feedback">:message</div>') !!}
-        </div>
-        <div class="form-group">
-            {{ Form::label('fecha_llegada') }}
-            {{ Form::text('fecha_llegada', $telacolore->fecha_llegada, ['class' => 'form-control' . ($errors->has('fecha_llegada') ? ' is-invalid' : ''), 'placeholder' => 'Fecha Llegada']) }}
-            {!! $errors->first('fecha_llegada', '<div class="invalid-feedback">:message</div>') !!}
         </div>
 
     </div>

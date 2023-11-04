@@ -36,8 +36,8 @@
                                     <tr>
                                         <th>No</th>
                                         
-										<th>Transaccion</th>
-										<th>Inventario</th>
+										<th>Transaccion Id</th>
+										<th>Inventario Id</th>
 										<th>Cantidad</th>
 										<th>Precio Metro</th>
 
@@ -49,8 +49,8 @@
                                         <tr>
                                             <td>{{ ++$i }}</td>
                                             
-											<td>{{ $detalletransaccion->transaccion }}</td>
-											<td>{{ $detalletransaccion->inventario }}</td>
+											<td>{{ $detalletransaccion->transaccion_id }}</td>
+											<td>{{ $detalletransaccion->inventario_id }}</td>
 											<td>{{ $detalletransaccion->cantidad }}</td>
 											<td>{{ $detalletransaccion->precio_metro }}</td>
 

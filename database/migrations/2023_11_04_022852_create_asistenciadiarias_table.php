@@ -15,10 +15,10 @@ return new class extends Migration
             $table->id();
             $table->unsignedBigInteger('sucursal_bodega');
             $table->foreign('sucursal_bodega')->references('id')->on('sucursals')->onDelete('cascade');
-            $table->unsignedBigInteger('empleado');
-            $table->foreign('empleado')->references('id')->on('empleados')->onDelete('cascade');
-            $table->timestamp('fecha_llegada');
-            $table->timestamp('fecha_salida');
+            $table->unsignedBigInteger('empleado_id');
+            $table->foreign('empleado_id')->references('id')->on('empleados')->onDelete('cascade');
+            $table->date('fecha_llegada');
+            $table->date('fecha_salida');
             $table->timestamps();
         });
     }

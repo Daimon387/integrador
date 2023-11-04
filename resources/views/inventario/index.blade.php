@@ -36,8 +36,8 @@
                                     <tr>
                                         <th>No</th>
                                         
-										<th>Sucursal</th>
-										<th>Producto</th>
+										<th>Sucursal Id</th>
+										<th>Tela Id</th>
 										<th>Cantidad</th>
 										<th>Metraje</th>
 										<th>Precio Metro Diferente</th>
@@ -51,8 +51,8 @@
                                         <tr>
                                             <td>{{ ++$i }}</td>
                                             
-											<td>{{ $inventario->sucursal }}</td>
-											<td>{{ $inventario->producto }}</td>
+											<td>{{ $inventario->sucursal_id }}</td>
+											<td>{{ $inventario->tela_id }}</td>
 											<td>{{ $inventario->cantidad }}</td>
 											<td>{{ $inventario->metraje }}</td>
 											<td>{{ $inventario->precio_metro_diferente }}</td>

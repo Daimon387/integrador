@@ -48,7 +48,7 @@ class Tela extends Model
      */
     public function preciotelasucursals()
     {
-        return $this->hasMany('App\Models\Preciotelasucursal', 'tela', 'id');
+        return $this->hasMany('App\Models\Preciotelasucursal', 'tela_id', 'id');
     }
     
     /**
@@ -56,7 +56,7 @@ class Tela extends Model
      */
     public function preferencias()
     {
-        return $this->hasMany('App\Models\Preferencia', 'tela', 'id');
+        return $this->hasMany('App\Models\Preferencia', 'tela_id', 'id');
     }
     
     /**
@@ -64,7 +64,7 @@ class Tela extends Model
      */
     public function telacolores()
     {
-        return $this->hasMany('App\Models\Telacolore', 'producto', 'id');
+        return $this->hasMany('App\Models\Telacolore', 'tela_id', 'id');
     }
     
 

@@ -7,9 +7,9 @@
             {!! $errors->first('sucursal_bodega', '<div class="invalid-feedback">:message</div>') !!}
         </div>
         <div class="form-group">
-            {{ Form::label('empleado') }}
-            {{ Form::text('empleado', $asistenciadiaria->empleado, ['class' => 'form-control' . ($errors->has('empleado') ? ' is-invalid' : ''), 'placeholder' => 'Empleado']) }}
-            {!! $errors->first('empleado', '<div class="invalid-feedback">:message</div>') !!}
+            {{ Form::label('empleado_id') }}
+            {{ Form::text('empleado_id', $asistenciadiaria->empleado_id, ['class' => 'form-control' . ($errors->has('empleado_id') ? ' is-invalid' : ''), 'placeholder' => 'Empleado Id']) }}
+            {!! $errors->first('empleado_id', '<div class="invalid-feedback">:message</div>') !!}
         </div>
         <div class="form-group">
             {{ Form::label('fecha_llegada') }}

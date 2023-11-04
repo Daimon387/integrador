@@ -14,14 +14,14 @@ return new class extends Migration
         Schema::create('telacolores', function (Blueprint $table) {
             $table->id();
             $table->string('nombre');
+            $table->unsignedBigInteger('cinta_id');
+            $table->foreign('cinta_id')->references('id')->on('cintas')->onDelete('cascade');
+            $table->unsignedBigInteger('tela_id');
+            $table->foreign('tela_id')->references('id')->on('telas')->onDelete('cascade');
+            $table->date('fecha_llegada');
             $table->string('detalle')->nullable();
             $table->string('nro_rollo')->nullable();
             $table->string('numero')->nullable();
-            $table->unsignedBigInteger('cinta');
-            $table->foreign('cinta')->references('id')->on('cintas')->onDelete('cascade');
-            $table->unsignedBigInteger('producto');
-            $table->foreign('producto')->references('id')->on('telas')->onDelete('cascade');
-            $table->timestamp('fecha_llegada');
             $table->timestamps();
         });
     }

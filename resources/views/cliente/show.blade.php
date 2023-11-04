@@ -21,8 +21,8 @@
                     <div class="card-body">
                         
                         <div class="form-group">
-                            <strong>Datos Personales:</strong>
-                            {{ $cliente->datos_personales }}
+                            <strong>Persona Id:</strong>
+                            {{ $cliente->persona_id }}
                         </div>
                         <div class="form-group">
                             <strong>Fecha Inicio Compra:</strong>

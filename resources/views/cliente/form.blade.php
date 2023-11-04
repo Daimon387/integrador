@@ -2,9 +2,9 @@
     <div class="box-body">
         
         <div class="form-group">
-            {{ Form::label('datos_personales') }}
-            {{ Form::text('datos_personales', $cliente->datos_personales, ['class' => 'form-control' . ($errors->has('datos_personales') ? ' is-invalid' : ''), 'placeholder' => 'Datos Personales']) }}
-            {!! $errors->first('datos_personales', '<div class="invalid-feedback">:message</div>') !!}
+            {{ Form::label('persona_id') }}
+            {{ Form::text('persona_id', $cliente->persona_id, ['class' => 'form-control' . ($errors->has('persona_id') ? ' is-invalid' : ''), 'placeholder' => 'Persona Id']) }}
+            {!! $errors->first('persona_id', '<div class="invalid-feedback">:message</div>') !!}
         </div>
         <div class="form-group">
             {{ Form::label('fecha_inicio_compra') }}

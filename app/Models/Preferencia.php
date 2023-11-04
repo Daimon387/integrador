@@ -8,8 +8,8 @@ use Illuminate\Database\Eloquent\Model;
  * Class Preferencia
  *
  * @property $id
- * @property $cliente
- * @property $tela
+ * @property $cliente_id
+ * @property $tela_id
  * @property $created_at
  * @property $updated_at
  *
@@ -31,7 +31,7 @@ class Preferencia extends Model
      *
      * @var array
      */
-    protected $fillable = ['cliente','tela'];
+    protected $fillable = ['cliente_id','tela_id'];
 
 
     /**
@@ -39,7 +39,7 @@ class Preferencia extends Model
      */
     public function cliente()
     {
-        return $this->hasOne('App\Models\Cliente', 'id', 'cliente');
+        return $this->hasOne('App\Models\Cliente', 'id', 'cliente_id');
     }
     
     /**
@@ -47,7 +47,7 @@ class Preferencia extends Model
      */
     public function tela()
     {
-        return $this->hasOne('App\Models\Tela', 'id', 'tela');
+        return $this->hasOne('App\Models\Tela', 'id', 'tela_id');
     }
     
 

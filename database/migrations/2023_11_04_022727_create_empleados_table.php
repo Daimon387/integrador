@@ -13,13 +13,13 @@ return new class extends Migration
     {
         Schema::create('empleados', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('datos')->unique();
-            $table->foreign('datos')->references('id')->on('personas')->onDelete('cascade');
-            $table->unsignedBigInteger('usuario')->unique();
-            $table->foreign('usuario')->references('id')->on('users')->onDelete('cascade');
-            $table->unsignedBigInteger('cargo');
-            $table->foreign('cargo')->references('id')->on('cargos')->onDelete('cascade');
-            $table->timestamp('fecha_contratacion')->nullable();
+            $table->unsignedBigInteger('persona_id')->unique();
+            $table->foreign('persona_id')->references('id')->on('personas')->onDelete('cascade');
+            $table->unsignedBigInteger('usuario_id')->unique();
+            $table->foreign('usuario_id')->references('id')->on('users')->onDelete('cascade');
+            $table->unsignedBigInteger('cargo_id');
+            $table->foreign('cargo_id')->references('id')->on('cargos')->onDelete('cascade');
+            $table->date('fecha_contratacion')->nullable();
             $table->float('sueldo');
             $table->timestamps();
         });

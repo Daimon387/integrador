@@ -13,10 +13,10 @@ return new class extends Migration
     {
         Schema::create('detalletransaccions', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('transaccion');
-            $table->foreign('transaccion')->references('id')->on('transacciones')->onDelete('cascade');
-            $table->unsignedBigInteger('inventario');
-            $table->foreign('inventario')->references('id')->on('inventarios')->onDelete('cascade');
+            $table->unsignedBigInteger('transaccion_id');
+            $table->foreign('transaccion_id')->references('id')->on('transacciones')->onDelete('cascade');
+            $table->unsignedBigInteger('inventario_id');
+            $table->foreign('inventario_id')->references('id')->on('inventarios')->onDelete('cascade');
             $table->integer('cantidad');
             $table->float('precio_metro');
             $table->timestamps();

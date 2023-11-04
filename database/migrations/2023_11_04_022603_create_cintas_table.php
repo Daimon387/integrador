@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('nombre');
             $table->string('detalle');
-            $table->timestamp('fecha_creacion');
+            $table->date('fecha_creacion');
             $table->timestamps();
         });
     }

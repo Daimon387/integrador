@@ -46,7 +46,7 @@ class Persona extends Model
      */
     public function cliente()
     {
-        return $this->hasOne('App\Models\Cliente', 'datos_personales', 'id');
+        return $this->hasOne('App\Models\Cliente', 'persona_id', 'id');
     }
     
     /**
@@ -54,7 +54,7 @@ class Persona extends Model
      */
     public function empleado()
     {
-        return $this->hasOne('App\Models\Empleado', 'datos', 'id');
+        return $this->hasOne('App\Models\Empleado', 'persona_id', 'id');
     }
     
 

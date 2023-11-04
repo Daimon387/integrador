@@ -9,8 +9,8 @@ use Illuminate\Database\Eloquent\Model;
  *
  * @property $id
  * @property $sucursal_bodega
- * @property $empleado
- * @property $cliente
+ * @property $empleado_id
+ * @property $cliente_id
  * @property $fecha
  * @property $total_venta
  * @property $productos_retirados
@@ -23,6 +23,7 @@ use Illuminate\Database\Eloquent\Model;
  * @property $updated_at
  *
  * @property Cliente $cliente
+ * @property Detalletransaccion[] $detalletransaccions
  * @property Empleado $empleado
  * @property Pago[] $pagos
  * @property Pedido[] $pedidos
@@ -35,7 +36,7 @@ class Transaccione extends Model
     
     static $rules = [
 		'sucursal_bodega' => 'required',
-		'empleado' => 'required',
+		'empleado_id' => 'required',
 		'fecha' => 'required',
 		'total_venta' => 'required',
 		'productos_retirados' => 'required',
@@ -48,7 +49,7 @@ class Transaccione extends Model
      *
      * @var array
      */
-    protected $fillable = ['sucursal_bodega','empleado','cliente','fecha','total_venta','productos_retirados','detalle','fecha_vencimiento','descuento','costo_adicional','monto_deuda'];
+    protected $fillable = ['sucursal_bodega','empleado_id','cliente_id','fecha','total_venta','productos_retirados','detalle','fecha_vencimiento','descuento','costo_adicional','monto_deuda'];
 
 
     /**
@@ -56,7 +57,15 @@ class Transaccione extends Model
      */
     public function cliente()
     {
-        return $this->hasOne('App\Models\Cliente', 'id', 'cliente');
+        return $this->hasOne('App\Models\Cliente', 'id', 'cliente_id');
+    }
+    
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function detalletransaccions()
+    {
+        return $this->hasMany('App\Models\Detalletransaccion', 'transaccion_id', 'id');
     }
     
     /**
@@ -64,7 +73,7 @@ class Transaccione extends Model
      */
     public function empleado()
     {
-        return $this->hasOne('App\Models\Empleado', 'id', 'empleado');
+        return $this->hasOne('App\Models\Empleado', 'id', 'empleado_id');
     }
     
     /**
@@ -72,7 +81,7 @@ class Transaccione extends Model
      */
     public function pagos()
     {
-        return $this->hasMany('App\Models\Pago', 'transaccion', 'id');
+        return $this->hasMany('App\Models\Pago', 'transaccion_id', 'id');
     }
     
     /**
@@ -80,7 +89,7 @@ class Transaccione extends Model
      */
     public function pedidos()
     {
-        return $this->hasMany('App\Models\Pedido', 'transaccion', 'id');
+        return $this->hasMany('App\Models\Pedido', 'transaccion_id', 'id');
     }
     
     /**

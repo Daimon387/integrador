@@ -36,8 +36,8 @@
                                     <tr>
                                         <th>No</th>
                                         
-										<th>Cliente</th>
-										<th>Tela</th>
+										<th>Cliente Id</th>
+										<th>Tela Id</th>
 
                                         <th></th>
                                     </tr>
@@ -47,8 +47,8 @@
                                         <tr>
                                             <td>{{ ++$i }}</td>
                                             
-											<td>{{ $preferencia->cliente }}</td>
-											<td>{{ $preferencia->tela }}</td>
+											<td>{{ $preferencia->cliente_id }}</td>
+											<td>{{ $preferencia->tela_id }}</td>
 
                                             <td>
                                                 <form action="{{ route('preferencias.destroy',$preferencia->id) }}" method="POST">

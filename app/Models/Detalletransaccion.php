@@ -8,8 +8,8 @@ use Illuminate\Database\Eloquent\Model;
  * Class Detalletransaccion
  *
  * @property $id
- * @property $transaccion
- * @property $inventario
+ * @property $transaccion_id
+ * @property $inventario_id
  * @property $cantidad
  * @property $precio_metro
  * @property $created_at
@@ -24,8 +24,8 @@ class Detalletransaccion extends Model
 {
     
     static $rules = [
-		'transaccion' => 'required',
-		'inventario' => 'required',
+		'transaccion_id' => 'required',
+		'inventario_id' => 'required',
 		'cantidad' => 'required',
 		'precio_metro' => 'required',
     ];
@@ -37,7 +37,7 @@ class Detalletransaccion extends Model
      *
      * @var array
      */
-    protected $fillable = ['transaccion','inventario','cantidad','precio_metro'];
+    protected $fillable = ['transaccion_id','inventario_id','cantidad','precio_metro'];
 
 
     /**
@@ -45,7 +45,7 @@ class Detalletransaccion extends Model
      */
     public function inventario()
     {
-        return $this->hasOne('App\Models\Inventario', 'id', 'inventario');
+        return $this->hasOne('App\Models\Inventario', 'id', 'inventario_id');
     }
     
     /**
@@ -53,7 +53,7 @@ class Detalletransaccion extends Model
      */
     public function transaccione()
     {
-        return $this->hasOne('App\Models\Transaccione', 'id', 'transaccion');
+        return $this->hasOne('App\Models\Transaccione', 'id', 'transaccion_id');
     }
     
 

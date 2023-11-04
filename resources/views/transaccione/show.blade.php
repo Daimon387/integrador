@@ -25,12 +25,12 @@
                             {{ $transaccione->sucursal_bodega }}
                         </div>
                         <div class="form-group">
-                            <strong>Empleado:</strong>
-                            {{ $transaccione->empleado }}
+                            <strong>Empleado Id:</strong>
+                            {{ $transaccione->empleado_id }}
                         </div>
                         <div class="form-group">
-                            <strong>Cliente:</strong>
-                            {{ $transaccione->cliente }}
+                            <strong>Cliente Id:</strong>
+                            {{ $transaccione->cliente_id }}
                         </div>
                         <div class="form-group">
                             <strong>Fecha:</strong>

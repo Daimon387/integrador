@@ -25,6 +25,18 @@
                             {{ $telacolore->nombre }}
                         </div>
                         <div class="form-group">
+                            <strong>Cinta Id:</strong>
+                            {{ $telacolore->cinta_id }}
+                        </div>
+                        <div class="form-group">
+                            <strong>Tela Id:</strong>
+                            {{ $telacolore->tela_id }}
+                        </div>
+                        <div class="form-group">
+                            <strong>Fecha Llegada:</strong>
+                            {{ $telacolore->fecha_llegada }}
+                        </div>
+                        <div class="form-group">
                             <strong>Detalle:</strong>
                             {{ $telacolore->detalle }}
                         </div>
@@ -35,18 +47,6 @@
                         <div class="form-group">
                             <strong>Numero:</strong>
                             {{ $telacolore->numero }}
-                        </div>
-                        <div class="form-group">
-                            <strong>Cinta:</strong>
-                            {{ $telacolore->cinta }}
-                        </div>
-                        <div class="form-group">
-                            <strong>Producto:</strong>
-                            {{ $telacolore->producto }}
-                        </div>
-                        <div class="form-group">
-                            <strong>Fecha Llegada:</strong>
-                            {{ $telacolore->fecha_llegada }}
                         </div>
 
                     </div>

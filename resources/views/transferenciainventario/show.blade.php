@@ -33,8 +33,8 @@
                             {{ $transferenciainventario->sucursal_bodega_origen }}
                         </div>
                         <div class="form-group">
-                            <strong>Inventario:</strong>
-                            {{ $transferenciainventario->inventario }}
+                            <strong>Inventario Id:</strong>
+                            {{ $transferenciainventario->inventario_id }}
                         </div>
                         <div class="form-group">
                             <strong>Estado:</strong>

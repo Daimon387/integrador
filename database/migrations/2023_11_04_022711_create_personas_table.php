@@ -18,7 +18,7 @@ return new class extends Migration
             $table->integer('celular');
             $table->string('direccion')->nullable();
             $table->string('detalle')->nullable();
-            $table->timestamp('fecha_nacimiento')->nullable();
+            $table->date('fecha_nacimiento')->nullable();
             $table->timestamps();
         });
     }

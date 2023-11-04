@@ -9,7 +9,7 @@ use Illuminate\Database\Eloquent\Model;
  *
  * @property $id
  * @property $sucursal_bodega
- * @property $empleado
+ * @property $empleado_id
  * @property $fecha_llegada
  * @property $fecha_salida
  * @property $created_at
@@ -25,7 +25,7 @@ class Asistenciadiaria extends Model
     
     static $rules = [
 		'sucursal_bodega' => 'required',
-		'empleado' => 'required',
+		'empleado_id' => 'required',
 		'fecha_llegada' => 'required',
 		'fecha_salida' => 'required',
     ];
@@ -37,7 +37,7 @@ class Asistenciadiaria extends Model
      *
      * @var array
      */
-    protected $fillable = ['sucursal_bodega','empleado','fecha_llegada','fecha_salida'];
+    protected $fillable = ['sucursal_bodega','empleado_id','fecha_llegada','fecha_salida'];
 
 
     /**
@@ -45,7 +45,7 @@ class Asistenciadiaria extends Model
      */
     public function empleado()
     {
-        return $this->hasOne('App\Models\Empleado', 'id', 'empleado');
+        return $this->hasOne('App\Models\Empleado', 'id', 'empleado_id');
     }
     
     /**

@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
  * Class Pedido
  *
  * @property $id
- * @property $transaccion
+ * @property $transaccion_id
  * @property $nro_factura
  * @property $lugar_destino
  * @property $detalle
@@ -24,7 +24,7 @@ class Pedido extends Model
 {
     
     static $rules = [
-		'transaccion' => 'required',
+		'transaccion_id' => 'required',
 		'nro_factura' => 'required',
 		'lugar_destino' => 'required',
     ];
@@ -36,7 +36,7 @@ class Pedido extends Model
      *
      * @var array
      */
-    protected $fillable = ['transaccion','nro_factura','lugar_destino','detalle','estado'];
+    protected $fillable = ['transaccion_id','nro_factura','lugar_destino','detalle','estado'];
 
 
     /**
@@ -44,7 +44,7 @@ class Pedido extends Model
      */
     public function transaccione()
     {
-        return $this->hasOne('App\Models\Transaccione', 'id', 'transaccion');
+        return $this->hasOne('App\Models\Transaccione', 'id', 'transaccion_id');
     }
     
 

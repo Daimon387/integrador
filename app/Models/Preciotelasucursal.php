@@ -9,7 +9,7 @@ use Illuminate\Database\Eloquent\Model;
  *
  * @property $id
  * @property $sucursal_bodega
- * @property $tela
+ * @property $tela_id
  * @property $precio_metro
  * @property $created_at
  * @property $updated_at
@@ -24,7 +24,7 @@ class Preciotelasucursal extends Model
     
     static $rules = [
 		'sucursal_bodega' => 'required',
-		'tela' => 'required',
+		'tela_id' => 'required',
 		'precio_metro' => 'required',
     ];
 
@@ -35,7 +35,7 @@ class Preciotelasucursal extends Model
      *
      * @var array
      */
-    protected $fillable = ['sucursal_bodega','tela','precio_metro'];
+    protected $fillable = ['sucursal_bodega','tela_id','precio_metro'];
 
 
     /**
@@ -51,7 +51,7 @@ class Preciotelasucursal extends Model
      */
     public function tela()
     {
-        return $this->hasOne('App\Models\Tela', 'id', 'tela');
+        return $this->hasOne('App\Models\Tela', 'id', 'tela_id');
     }
     
 

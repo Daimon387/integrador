@@ -37,7 +37,7 @@
                                         <th>No</th>
                                         
 										<th>Sucursal Bodega</th>
-										<th>Tela</th>
+										<th>Tela Id</th>
 										<th>Precio Metro</th>
 
                                         <th></th>
@@ -49,7 +49,7 @@
                                             <td>{{ ++$i }}</td>
                                             
 											<td>{{ $preciotelasucursal->sucursal_bodega }}</td>
-											<td>{{ $preciotelasucursal->tela }}</td>
+											<td>{{ $preciotelasucursal->tela_id }}</td>
 											<td>{{ $preciotelasucursal->precio_metro }}</td>
 
                                             <td>

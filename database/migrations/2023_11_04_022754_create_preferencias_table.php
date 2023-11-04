@@ -13,10 +13,10 @@ return new class extends Migration
     {
         Schema::create('preferencias', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('cliente')->nullable();
-            $table->foreign('cliente')->references('id')->on('clientes')->onDelete('cascade');
-            $table->unsignedBigInteger('tela')->nullable();
-            $table->foreign('tela')->references('id')->on('telas')->onDelete('cascade');
+            $table->unsignedBigInteger('cliente_id')->nullable();
+            $table->foreign('cliente_id')->references('id')->on('clientes')->onDelete('cascade');
+            $table->unsignedBigInteger('tela_id')->nullable();
+            $table->foreign('tela_id')->references('id')->on('telas')->onDelete('cascade');
             $table->timestamps();
         });
     }

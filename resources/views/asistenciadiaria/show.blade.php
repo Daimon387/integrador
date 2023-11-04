@@ -25,8 +25,8 @@
                             {{ $asistenciadiaria->sucursal_bodega }}
                         </div>
                         <div class="form-group">
-                            <strong>Empleado:</strong>
-                            {{ $asistenciadiaria->empleado }}
+                            <strong>Empleado Id:</strong>
+                            {{ $asistenciadiaria->empleado_id }}
                         </div>
                         <div class="form-group">
                             <strong>Fecha Llegada:</strong>

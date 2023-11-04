@@ -2,14 +2,14 @@
     <div class="box-body">
         
         <div class="form-group">
-            {{ Form::label('cliente') }}
-            {{ Form::text('cliente', $preferencia->cliente, ['class' => 'form-control' . ($errors->has('cliente') ? ' is-invalid' : ''), 'placeholder' => 'Cliente']) }}
-            {!! $errors->first('cliente', '<div class="invalid-feedback">:message</div>') !!}
+            {{ Form::label('cliente_id') }}
+            {{ Form::text('cliente_id', $preferencia->cliente_id, ['class' => 'form-control' . ($errors->has('cliente_id') ? ' is-invalid' : ''), 'placeholder' => 'Cliente Id']) }}
+            {!! $errors->first('cliente_id', '<div class="invalid-feedback">:message</div>') !!}
         </div>
         <div class="form-group">
-            {{ Form::label('tela') }}
-            {{ Form::text('tela', $preferencia->tela, ['class' => 'form-control' . ($errors->has('tela') ? ' is-invalid' : ''), 'placeholder' => 'Tela']) }}
-            {!! $errors->first('tela', '<div class="invalid-feedback">:message</div>') !!}
+            {{ Form::label('tela_id') }}
+            {{ Form::text('tela_id', $preferencia->tela_id, ['class' => 'form-control' . ($errors->has('tela_id') ? ' is-invalid' : ''), 'placeholder' => 'Tela Id']) }}
+            {!! $errors->first('tela_id', '<div class="invalid-feedback">:message</div>') !!}
         </div>
 
     </div>

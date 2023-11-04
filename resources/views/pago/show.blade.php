@@ -25,8 +25,8 @@
                             {{ $pago->sucursal_bodega }}
                         </div>
                         <div class="form-group">
-                            <strong>Transaccion:</strong>
-                            {{ $pago->transaccion }}
+                            <strong>Transaccion Id:</strong>
+                            {{ $pago->transaccion_id }}
                         </div>
                         <div class="form-group">
                             <strong>Metodo Pago:</strong>

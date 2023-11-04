@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
  * Class Sucursal
  *
  * @property $id
- * @property $administrador
+ * @property $administrador_id
  * @property $direccion
  * @property $ciudad
  * @property $tipo
@@ -30,7 +30,7 @@ class Sucursal extends Model
 {
     
     static $rules = [
-		'administrador' => 'required',
+		'administrador_id' => 'required',
 		'direccion' => 'required',
 		'ciudad' => 'required',
     ];
@@ -42,7 +42,7 @@ class Sucursal extends Model
      *
      * @var array
      */
-    protected $fillable = ['administrador','direccion','ciudad','tipo'];
+    protected $fillable = ['administrador_id','direccion','ciudad','tipo'];
 
 
     /**
@@ -58,7 +58,7 @@ class Sucursal extends Model
      */
     public function empleado()
     {
-        return $this->hasOne('App\Models\Empleado', 'id', 'administrador');
+        return $this->hasOne('App\Models\Empleado', 'id', 'administrador_id');
     }
     
     /**
@@ -74,7 +74,7 @@ class Sucursal extends Model
      */
     public function inventario()
     {
-        return $this->hasOne('App\Models\Inventario', 'sucursal', 'id');
+        return $this->hasOne('App\Models\Inventario', 'sucursal_id', 'id');
     }
     
     /**

@@ -18,7 +18,7 @@ return new class extends Migration
             $table->float('metraje')->nullable();
             $table->float('precio_general');
             $table->string('detalle');
-            $table->timestamp('fecha_creacion')->nullable();
+            $table->date('fecha_creacion')->nullable();
             $table->timestamps();
         });
     }

@@ -2,9 +2,9 @@
     <div class="box-body">
         
         <div class="form-group">
-            {{ Form::label('administrador') }}
-            {{ Form::text('administrador', $sucursal->administrador, ['class' => 'form-control' . ($errors->has('administrador') ? ' is-invalid' : ''), 'placeholder' => 'Administrador']) }}
-            {!! $errors->first('administrador', '<div class="invalid-feedback">:message</div>') !!}
+            {{ Form::label('administrador_id') }}
+            {{ Form::text('administrador_id', $sucursal->administrador_id, ['class' => 'form-control' . ($errors->has('administrador_id') ? ' is-invalid' : ''), 'placeholder' => 'Administrador Id']) }}
+            {!! $errors->first('administrador_id', '<div class="invalid-feedback">:message</div>') !!}
         </div>
         <div class="form-group">
             {{ Form::label('direccion') }}

@@ -21,8 +21,8 @@
                     <div class="card-body">
                         
                         <div class="form-group">
-                            <strong>Administrador:</strong>
-                            {{ $sucursal->administrador }}
+                            <strong>Administrador Id:</strong>
+                            {{ $sucursal->administrador_id }}
                         </div>
                         <div class="form-group">
                             <strong>Direccion:</strong>

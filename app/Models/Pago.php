@@ -9,7 +9,7 @@ use Illuminate\Database\Eloquent\Model;
  *
  * @property $id
  * @property $sucursal_bodega
- * @property $transaccion
+ * @property $transaccion_id
  * @property $metodo_pago
  * @property $fecha
  * @property $monto_pagado
@@ -27,7 +27,7 @@ class Pago extends Model
     
     static $rules = [
 		'sucursal_bodega' => 'required',
-		'transaccion' => 'required',
+		'transaccion_id' => 'required',
 		'metodo_pago' => 'required',
 		'fecha' => 'required',
 		'monto_pagado' => 'required',
@@ -40,7 +40,7 @@ class Pago extends Model
      *
      * @var array
      */
-    protected $fillable = ['sucursal_bodega','transaccion','metodo_pago','fecha','monto_pagado'];
+    protected $fillable = ['sucursal_bodega','transaccion_id','metodo_pago','fecha','monto_pagado'];
 
 
     /**
@@ -64,7 +64,7 @@ class Pago extends Model
      */
     public function transaccione()
     {
-        return $this->hasOne('App\Models\Transaccione', 'id', 'transaccion');
+        return $this->hasOne('App\Models\Transaccione', 'id', 'transaccion_id');
     }
     
 

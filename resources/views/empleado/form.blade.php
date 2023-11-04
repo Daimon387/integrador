@@ -2,19 +2,19 @@
     <div class="box-body">
         
         <div class="form-group">
-            {{ Form::label('datos') }}
-            {{ Form::text('datos', $empleado->datos, ['class' => 'form-control' . ($errors->has('datos') ? ' is-invalid' : ''), 'placeholder' => 'Datos']) }}
-            {!! $errors->first('datos', '<div class="invalid-feedback">:message</div>') !!}
+            {{ Form::label('persona_id') }}
+            {{ Form::text('persona_id', $empleado->persona_id, ['class' => 'form-control' . ($errors->has('persona_id') ? ' is-invalid' : ''), 'placeholder' => 'Persona Id']) }}
+            {!! $errors->first('persona_id', '<div class="invalid-feedback">:message</div>') !!}
         </div>
         <div class="form-group">
-            {{ Form::label('usuario') }}
-            {{ Form::text('usuario', $empleado->usuario, ['class' => 'form-control' . ($errors->has('usuario') ? ' is-invalid' : ''), 'placeholder' => 'Usuario']) }}
-            {!! $errors->first('usuario', '<div class="invalid-feedback">:message</div>') !!}
+            {{ Form::label('usuario_id') }}
+            {{ Form::text('usuario_id', $empleado->usuario_id, ['class' => 'form-control' . ($errors->has('usuario_id') ? ' is-invalid' : ''), 'placeholder' => 'Usuario Id']) }}
+            {!! $errors->first('usuario_id', '<div class="invalid-feedback">:message</div>') !!}
         </div>
         <div class="form-group">
-            {{ Form::label('cargo') }}
-            {{ Form::text('cargo', $empleado->cargo, ['class' => 'form-control' . ($errors->has('cargo') ? ' is-invalid' : ''), 'placeholder' => 'Cargo']) }}
-            {!! $errors->first('cargo', '<div class="invalid-feedback">:message</div>') !!}
+            {{ Form::label('cargo_id') }}
+            {{ Form::text('cargo_id', $empleado->cargo_id, ['class' => 'form-control' . ($errors->has('cargo_id') ? ' is-invalid' : ''), 'placeholder' => 'Cargo Id']) }}
+            {!! $errors->first('cargo_id', '<div class="invalid-feedback">:message</div>') !!}
         </div>
         <div class="form-group">
             {{ Form::label('fecha_contratacion') }}
