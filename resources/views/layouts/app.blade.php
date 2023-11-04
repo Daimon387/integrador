@@ -50,7 +50,7 @@
                             @endif
                         @else
                         <li class="nav-item">
-                            <a class="nav-link" href="{{route('cargos.index')}}">Cargos</a>
+                            <a class="nav-link" href="{{route('cargos.index')}}">Cargs</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="{{route('cintas.index')}}">Cintas</a>
