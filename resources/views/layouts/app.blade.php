@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -16,6 +17,9 @@
     <!-- Scripts -->
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
 </head>
+<?php
+$emp = 1
+?>
 <body>
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
@@ -23,7 +27,9 @@
                 <a class="navbar-brand" href="{{ url('/') }}">
                     {{ config('app.name', 'Laravel') }}
                 </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
@@ -49,76 +55,91 @@
                                 </li>
                             @endif
                         @else
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{route('cargos.index')}}">Cargs</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{route('cintas.index')}}">Cintas</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{route('telas.index')}}">Telas</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{route('telacolores.index')}}">Tela colores</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{route('personas.index')}}">Personas</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{route('clientes.index')}}">clientes</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{route('empleados.index')}}">empleados</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{route('sucursals.index')}}">Sucursales</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{route('inventarios.index')}}">inventarios</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{route('preferencias.index')}}">Preferencias</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{route('transferenciainventarios.index')}}">transferenciaInventarios</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{route('transacciones.index')}}">transacciones</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{route('pedidos.index')}}">Pedidos</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{route('asistenciadiarias.index')}}">AsistenciaDiarias</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{route('metodopagos.index')}}">MetodosPago</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{route('pagos.index')}}">Pagos</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{route('flujoefectivodiarios.index')}}">flujoEfectivo</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{route('preciotelasucursals.index')}}">precioTelaSucursales</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{route('detalletransaccions.index')}}">detalletransaccions</a>
-                        </li>
+                            @if ($emp == 1)
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('cargos.index') }}">Cargos</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('cintas.index') }}">Cintas</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('telas.index') }}">Telas</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('telacolores.index') }}">Tela colores</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('personas.index') }}">Personas</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('clientes.index') }}">clientes</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('empleados.index') }}">empleados</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('sucursals.index') }}">Sucursales</a>
+                                </li>
+                            @endif
+                            @if ($emp == 2)
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('inventarios.index') }}">inventarios</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('preferencias.index') }}">Preferencias</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link"
+                                        href="{{ route('transferenciainventarios.index') }}">transferenciaInventarios</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('transacciones.index') }}">transacciones</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('pedidos.index') }}">Pedidos</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('asistenciadiarias.index') }}">AsistenciaDiarias</a>
+                                </li>
+                            @endif
+                            @if ($emp == 3)
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('metodopagos.index') }}">MetodosPago</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('pagos.index') }}">Pagos</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('flujoefectivodiarios.index') }}">flujoEfectivo</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link"
+                                        href="{{ route('preciotelasucursals.index') }}">precioTelaSucursales</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link"
+                                        href="{{ route('detalletransaccions.index') }}">detalletransaccions</a>
+                                </li>
+                            @endif
+
+
+
+
                             <li class="nav-item dropdown">
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
+                                    data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }}
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                                     <a class="dropdown-item" href="{{ route('logout') }}"
-                                       onclick="event.preventDefault();
+                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
                                         {{ __('Logout') }}
                                     </a>
 
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST"
+                                        class="d-none">
                                         @csrf
                                     </form>
                                 </div>
@@ -134,4 +155,5 @@
         </main>
     </div>
 </body>
+
 </html>
