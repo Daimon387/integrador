@@ -49,6 +49,60 @@
                                 </li>
                             @endif
                         @else
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{route('cargos.index')}}">Cargos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{route('cintas.index')}}">Cintas</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{route('productos.index')}}">Productos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{route('productocolores.index')}}">Producto colores</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{route('personas.index')}}">Personas</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{route('clientes.index')}}">clientes</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{route('empleados.index')}}">empleados</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{route('sucursals.index')}}">Sucursales</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{route('inventarios.index')}}">inventarios</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{route('preferencias.index')}}">Preferencias</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{route('transferenciainventarios.index')}}">transferenciaInventarios</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{route('transacciones.index')}}">transacciones</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{route('pedidos.index')}}">Pedidos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{route('asistenciadiarias.index')}}">AsistenciaDiarias</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{route('metodopagos.index')}}">MetodosPago</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{route('pagos.index')}}">Pagos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{route('flujoefectivodiarios.index')}}">flujoEfectivo</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{route('preciotelasucursals.index')}}">precioTelaSucursales</a>
+                        </li>
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }}
