@@ -32,7 +32,8 @@ class CargoController extends Controller
     public function create()
     {
         $cargo = new Cargo();
-        return view('cargo.create', compact('cargo'));
+        $car = Cargo::pluck('nombre','id');
+        return view('cargo.create', compact('cargo','car'));
     }
 
     /**

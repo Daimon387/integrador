@@ -36,7 +36,7 @@
                                     <tr>
                                         <th>No</th>
                                         
-										<th>Persona Id</th>
+										<th>Persona</th>
 										<th>Fecha Inicio Compra</th>
 										<th>Giro Dinero</th>
 										<th>Deuda</th>
@@ -49,7 +49,7 @@
                                         <tr>
                                             <td>{{ ++$i }}</td>
                                             
-											<td>{{ $cliente->persona_id }}</td>
+											<td>{{ $cliente->persona->nombres }}</td>
 											<td>{{ $cliente->fecha_inicio_compra }}</td>
 											<td>{{ $cliente->giro_dinero }}</td>
 											<td>{{ $cliente->deuda }}</td>

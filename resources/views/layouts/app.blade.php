@@ -17,9 +17,7 @@
     <!-- Scripts -->
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
 </head>
-<?php
-$emp = 1;
-?>
+
 
 <body>
     <div id="app">
@@ -49,28 +47,16 @@ $emp = 1;
                                     <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
                                 </li>
                             @endif
-                            @if (Route::has('register'))
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Usuarios') }}</a>
-                                </li>
-                            @endif
                         @else
                             @if ($emp == 1)
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{ route('users.index') }}">usuarios</a>
                                 </li>
-
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{ route('cargos.index') }}">Cargos</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('cintas.index') }}">Cintas</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('telas.index') }}">Telas</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('telacolores.index') }}">Tela colores</a>
+                                    <a class="nav-link" href="{{ route('asistenciadiarias.index') }}">AsistenciaDiarias</a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{ route('personas.index') }}">Personas</a>
@@ -87,8 +73,15 @@ $emp = 1;
                             @endif
                             @if ($emp == 2)
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('inventarios.index') }}">inventarios</a>
+                                    <a class="nav-link" href="{{ route('cintas.index') }}">Cintas</a>
                                 </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('telas.index') }}">Telas</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('telacolores.index') }}">Tela colores</a>
+                                </li>
+
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{ route('preferencias.index') }}">Preferencias</a>
                                 </li>
@@ -101,14 +94,6 @@ $emp = 1;
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{ route('pedidos.index') }}">Pedidos</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('asistenciadiarias.index') }}">AsistenciaDiarias</a>
-                                </li>
-                            @endif
-                            @if ($emp == 3)
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('metodopagos.index') }}">MetodosPago</a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{ route('pagos.index') }}">Pagos</a>
@@ -125,10 +110,18 @@ $emp = 1;
                                         href="{{ route('detalletransaccions.index') }}">detalletransaccions</a>
                                 </li>
                             @endif
+                            @if ($emp == 3)
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('inventarios.index') }}">inventarios</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('metodopagos.index') }}">MetodosPago</a>
+                                </li>
+                            @endif
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
                                     data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    {{ Auth::user()->name }}
+                                    {{ $e }}
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">

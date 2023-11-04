@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Cliente;
+use App\Models\Persona;
 use Illuminate\Http\Request;
 
 /**
@@ -32,7 +33,8 @@ class ClienteController extends Controller
     public function create()
     {
         $cliente = new Cliente();
-        return view('cliente.create', compact('cliente'));
+        $personas = Persona::pluck('nombres','id');
+        return view('cliente.create', compact('cliente','personas'));
     }
 
     /**

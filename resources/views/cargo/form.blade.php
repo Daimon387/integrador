@@ -13,7 +13,7 @@
         </div>
         <div class="form-group">
             {{ Form::label('cargo_superior') }}
-            {{ Form::text('cargo_superior', $cargo->cargo_superior, ['class' => 'form-control' . ($errors->has('cargo_superior') ? ' is-invalid' : ''), 'placeholder' => 'Cargo Superior']) }}
+            {{ Form::select('cargo_superior',$car, $cargo->cargo_superior, ['class' => 'form-control' . ($errors->has('cargo_superior') ? ' is-invalid' : ''), 'placeholder' => 'Cargo Superior']) }}
             {!! $errors->first('cargo_superior', '<div class="invalid-feedback">:message</div>') !!}
         </div>
 

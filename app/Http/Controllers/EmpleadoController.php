@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Empleado;
+use App\Models\Cargo;
+use App\Models\Persona;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 /**
@@ -32,7 +35,10 @@ class EmpleadoController extends Controller
     public function create()
     {
         $empleado = new Empleado();
-        return view('empleado.create', compact('empleado'));
+        $cargo = Cargo::pluck('nombre','id');
+        $persona = Persona::pluck('nombres','id');
+        $user = User::pluck('email','id');
+        return view('empleado.create', compact('empleado','cargo','persona','user'));
     }
 
     /**

@@ -24,7 +24,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        /*
+        
         view()->composer('*', function ($view) {
             if (Auth::check()) {
                 $user = Auth::user();
@@ -36,6 +36,6 @@ class AppServiceProvider extends ServiceProvider
               
             }
         });
-        */
+        
     }
 }

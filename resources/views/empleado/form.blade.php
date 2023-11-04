@@ -3,17 +3,17 @@
         
         <div class="form-group">
             {{ Form::label('persona_id') }}
-            {{ Form::text('persona_id', $empleado->persona_id, ['class' => 'form-control' . ($errors->has('persona_id') ? ' is-invalid' : ''), 'placeholder' => 'Persona Id']) }}
+            {{ Form::select('persona_id',$persona, $empleado->persona_id, ['class' => 'form-control' . ($errors->has('persona_id') ? ' is-invalid' : ''), 'placeholder' => 'Persona Id']) }}
             {!! $errors->first('persona_id', '<div class="invalid-feedback">:message</div>') !!}
         </div>
         <div class="form-group">
             {{ Form::label('usuario_id') }}
-            {{ Form::text('usuario_id', $empleado->usuario_id, ['class' => 'form-control' . ($errors->has('usuario_id') ? ' is-invalid' : ''), 'placeholder' => 'Usuario Id']) }}
+            {{ Form::select('usuario_id',$user, $empleado->usuario_id, ['class' => 'form-control' . ($errors->has('usuario_id') ? ' is-invalid' : ''), 'placeholder' => 'Usuario Id']) }}
             {!! $errors->first('usuario_id', '<div class="invalid-feedback">:message</div>') !!}
         </div>
         <div class="form-group">
             {{ Form::label('cargo_id') }}
-            {{ Form::text('cargo_id', $empleado->cargo_id, ['class' => 'form-control' . ($errors->has('cargo_id') ? ' is-invalid' : ''), 'placeholder' => 'Cargo Id']) }}
+            {{ Form::select('cargo_id',$cargo, $empleado->cargo_id, ['class' => 'form-control' . ($errors->has('cargo_id') ? ' is-invalid' : ''), 'placeholder' => 'Cargo Id']) }}
             {!! $errors->first('cargo_id', '<div class="invalid-feedback">:message</div>') !!}
         </div>
         <div class="form-group">
