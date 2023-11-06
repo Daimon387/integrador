@@ -79,8 +79,10 @@ class EmpleadoController extends Controller
     public function edit($id)
     {
         $empleado = Empleado::find($id);
-
-        return view('empleado.edit', compact('empleado'));
+        $cargo = Cargo::pluck('nombre','id');
+        $persona = Persona::pluck('nombres','id');
+        $user = User::pluck('email','id');
+        return view('empleado.edit', compact('empleado','cargo','persona','user'));
     }
 
     /**

@@ -74,8 +74,9 @@ class CargoController extends Controller
     public function edit($id)
     {
         $cargo = Cargo::find($id);
+        $car = Cargo::pluck('nombre','id');
 
-        return view('cargo.edit', compact('cargo'));
+        return view('cargo.edit', compact('cargo','car'));
     }
 
     /**
