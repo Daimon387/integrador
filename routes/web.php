@@ -22,6 +22,46 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
+Route::middleware(['auth', 'admin'])->group(function () {
+    Route::resource('cargos', \App\Http\Controllers\CargoController::class);
+    Route::resource('cintas', \App\Http\Controllers\CintaController::class);
+    Route::resource('telas', \App\Http\Controllers\TelaController::class);
+    Route::resource('telacolores', \App\Http\Controllers\TelacoloreController::class);
+    Route::resource('empleados', \App\Http\Controllers\EmpleadoController::class);
+    Route::resource('sucursals', \App\Http\Controllers\SucursalController::class);
+    Route::resource('inventarios', \App\Http\Controllers\InventarioController::class);
+    Route::resource('preferencias', \App\Http\Controllers\PreferenciaController::class);
+    Route::resource('transferenciainventarios', \App\Http\Controllers\TransferenciainventarioController::class);
+    Route::resource('transacciones', \App\Http\Controllers\TransaccioneController::class);
+    Route::resource('pedidos', \App\Http\Controllers\PedidoController::class);
+    Route::resource('asistenciadiarias', \App\Http\Controllers\AsistenciadiariaController::class);
+    Route::resource('metodopagos', \App\Http\Controllers\MetodopagoController::class);
+    Route::resource('pagos', \App\Http\Controllers\PagoController::class);
+    Route::resource('flujoefectivodiarios', \App\Http\Controllers\FlujoefectivodiarioController::class);
+    Route::resource('preciotelasucursals', \App\Http\Controllers\PreciotelasucursalController::class);
+    Route::resource('detalletransaccions', \App\Http\Controllers\DetalletransaccionController::class);
+    Route::resource('users', App\Http\Controllers\UserController::class);
+});
+
+Route::middleware(['auth', 'vendedor'])->group(function () {
+    Route::resource('telacolores', \App\Http\Controllers\TelacoloreController::class);
+    
+    
+});
+
+Route::middleware(['auth', 'bodeguero'])->group(function () {
+    Route::resource('inventarios', \App\Http\Controllers\InventarioController::class);
+    Route::resource('metodopagos', \App\Http\Controllers\MetodopagoController::class);
+});
+
+Route::middleware(['auth', 'admin_or_vendedor'])->group(function () {
+    Route::resource('personas', \App\Http\Controllers\PersonaController::class);
+    Route::resource('clientes', \App\Http\Controllers\ClienteController::class);
+});
+
+
+
+/*
 Route::middleware(['auth'])->group(function () {
     Route::resource('cargos', \App\Http\Controllers\CargoController::class);
     Route::resource('cintas', \App\Http\Controllers\CintaController::class);
@@ -44,3 +84,4 @@ Route::middleware(['auth'])->group(function () {
     Route::resource('detalletransaccions', \App\Http\Controllers\DetalletransaccionController::class);
     Route::resource('users', App\Http\Controllers\UserController::class);
 });
+*/
