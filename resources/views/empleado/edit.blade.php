@@ -5,6 +5,7 @@
 @endsection
 
 @section('content')
+<!--Inicio de pagina que puede ser editada-->
     <section class="content container-fluid">
         <div class="">
             <div class="col-md-12">

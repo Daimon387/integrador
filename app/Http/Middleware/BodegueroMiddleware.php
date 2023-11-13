@@ -20,7 +20,7 @@ class BodegueroMiddleware
         $user = Auth::user();
         $empleado = Empleado::where('usuario_id', $user->id)->first();
     
-        if ($empleado && $empleado->cargo_id === 3) {
+        if ($empleado && $empleado->cargo->nombre === 'Bodeguero') {
             return $next($request); // El usuario tiene el cargo de "administrador".
         }
     

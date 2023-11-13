@@ -20,7 +20,7 @@ class AdminOrVenMiddleware
         $user = Auth::user();
         $empleado = Empleado::where('usuario_id', $user->id)->first();
     
-        if ($empleado && ($empleado->cargo_id === 1 || $empleado->cargo_id === 2)) {
+        if ($empleado && ($empleado->cargo->nombre === 'Administrador' || $empleado->cargo->nombre === 'Vendedor')) {
             return $next($request); // El usuario tiene el cargo de "administrador".
         }
     

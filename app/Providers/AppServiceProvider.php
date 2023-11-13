@@ -30,11 +30,11 @@ class AppServiceProvider extends ServiceProvider
                 $user = Auth::user();
                 $userid = $user->id;
                 $empleado = Empleado::where('usuario_id', $userid)->first();
-                $emp = $empleado->cargo_id;
                 $e = $empleado->cargo->nombre;
-                $view->with(['emp' => $emp, 'e' => $e]);
+                $view->with(['e' => $e]);
               
             }
         });
+        
     }
 }

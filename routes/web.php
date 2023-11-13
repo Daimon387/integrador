@@ -56,6 +56,8 @@ Route::middleware(['auth', 'bodeguero'])->group(function () {
 
 Route::middleware(['auth', 'admin_or_vendedor'])->group(function () {
     Route::resource('personas', \App\Http\Controllers\PersonaController::class);
+    Route::resource('transacciones', \App\Http\Controllers\TransaccioneController::class);
+
     Route::resource('clientes', \App\Http\Controllers\ClienteController::class);
 });
 

@@ -48,7 +48,7 @@
                                 </li>
                             @endif
                         @else
-                            @if ($emp == 1)
+                            @if ($e == 'Administrador')
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{ route('users.index') }}">usuarios</a>
                                 </li>
@@ -71,7 +71,7 @@
                                     <a class="nav-link" href="{{ route('sucursals.index') }}">Sucursales</a>
                                 </li>
                             @endif
-                            @if ($emp == 2)
+                            @if ($e == "Vendedor")
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{ route('cintas.index') }}">Cintas</a>
                                 </li>
@@ -110,7 +110,7 @@
                                         href="{{ route('detalletransaccions.index') }}">detalletransaccions</a>
                                 </li>
                             @endif
-                            @if ($emp == 3)
+                            @if ($e == 'Bodeguero')
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{ route('inventarios.index') }}">inventarios</a>
                                 </li>
