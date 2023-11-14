@@ -29,12 +29,16 @@
                             {{ $asistenciadiaria->empleado_id }}
                         </div>
                         <div class="form-group">
-                            <strong>Fecha Llegada:</strong>
-                            {{ $asistenciadiaria->fecha_llegada }}
+                            <strong>Fecha:</strong>
+                            {{ $asistenciadiaria->fecha }}
                         </div>
                         <div class="form-group">
-                            <strong>Fecha Salida:</strong>
-                            {{ $asistenciadiaria->fecha_salida }}
+                            <strong>Horario Entrada:</strong>
+                            {{ $asistenciadiaria->horario_entrada }}
+                        </div>
+                        <div class="form-group">
+                            <strong>Horario Salida:</strong>
+                            {{ $asistenciadiaria->horario_salida }}
                         </div>
 
                     </div>

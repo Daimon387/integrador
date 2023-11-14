@@ -5,14 +5,11 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * Class Asistenciadiaria
+ * Class Detallesucursal
  *
  * @property $id
- * @property $sucursal_bodega
  * @property $empleado_id
- * @property $fecha
- * @property $horario_entrada
- * @property $horario_salida
+ * @property $sucursal_id
  * @property $created_at
  * @property $updated_at
  *
@@ -21,15 +18,12 @@ use Illuminate\Database\Eloquent\Model;
  * @package App
  * @mixin \Illuminate\Database\Eloquent\Builder
  */
-class Asistenciadiaria extends Model
+class Detallesucursal extends Model
 {
     
     static $rules = [
-		'sucursal_bodega' => 'required',
 		'empleado_id' => 'required',
-		'fecha' => 'required',
-		'horario_entrada' => 'required',
-		'horario_salida' => 'required',
+		'sucursal_id' => 'required',
     ];
 
     protected $perPage = 20;
@@ -39,7 +33,7 @@ class Asistenciadiaria extends Model
      *
      * @var array
      */
-    protected $fillable = ['sucursal_bodega','empleado_id','fecha','horario_entrada','horario_salida'];
+    protected $fillable = ['empleado_id','sucursal_id'];
 
 
     /**
@@ -55,7 +49,7 @@ class Asistenciadiaria extends Model
      */
     public function sucursal()
     {
-        return $this->hasOne('App\Models\Sucursal', 'id', 'sucursal_bodega');
+        return $this->hasOne('App\Models\Sucursal', 'id', 'sucursal_id');
     }
     
 

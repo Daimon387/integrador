@@ -71,7 +71,7 @@
                                     <ul class="dropdown-menu">
                                         <li><a class="dropdown-item" href="{{ route('inventarios.index') }}">Inventarios</a></li>
                                         <li><a class="dropdown-item" href="{{ route('transferenciainventarios.index') }}">Transferencia Inventarios</a></li>
-                                        <!--Aqui se agrega detalle transferencia-->
+                                        <li><a class="dropdown-item" href="{{ route('detalletransferencias.index') }}">Detalle Transferencia</a></li>
                                       
                                     </ul>
                                 </li>
@@ -92,6 +92,7 @@
                                         aria-expanded="false">Empleados</a>
                                     <ul class="dropdown-menu">
                                         <li><a class="dropdown-item" href="{{ route('personas.index') }}">Personas</a></li>
+                                        <li><a class="dropdown-item" href="{{ route('users.index') }}">Usuarios</a></li>
                                         <li><a class="dropdown-item" href="{{ route('empleados.index') }}">Empleados</a></li>
                                         <li><a class="dropdown-item" href="{{ route('asistenciadiarias.index') }}">Asistencia Diarias</a></li>
                                         <li><a class="dropdown-item" href="{{ route('cargos.index') }}">Cargos</a></li>
@@ -104,7 +105,7 @@
                                     <ul class="dropdown-menu">
                                         <li><a class="dropdown-item" href="{{ route('sucursals.index') }}">Sucursales</a></li>
                                         <li><a class="dropdown-item" href="{{ route('flujoefectivodiarios.index') }}">Flujo de efectivo diarios</a></li>
-                                        <!--aqui entra detalle sucursales-->
+                                        <li><a class="dropdown-item" href="{{ route('detallesucursals.index') }}">Detalle Sucursales</a></li>
                                     </ul>
                                 </li>
 

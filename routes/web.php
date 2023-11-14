@@ -41,7 +41,8 @@ Route::middleware(['auth', 'admin'])->group(function () {
     Route::resource('preciotelasucursals', \App\Http\Controllers\PreciotelasucursalController::class);
     Route::resource('detalletransaccions', \App\Http\Controllers\DetalletransaccionController::class);
     Route::resource('metodopagos', \App\Http\Controllers\MetodopagoController::class);
-    Route::resource('detalletransferencia', \App\Http\Controllers\DetalletransferenciaController::class);
+    Route::resource('detalletransferencias', \App\Http\Controllers\DetalletransferenciaController::class);
+    Route::resource('detallesucursals', \App\Http\Controllers\DetallesucursalController::class);
     Route::resource('users', App\Http\Controllers\UserController::class);
 });
 

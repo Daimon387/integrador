@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('template_title')
-    Asistenciadiaria
+    Detallesucursal
 @endsection
 
 @section('content')
@@ -13,11 +13,11 @@
                         <div style="display: flex; justify-content: space-between; align-items: center;">
 
                             <span id="card_title">
-                                {{ __('Asistenciadiaria') }}
+                                {{ __('Detallesucursal') }}
                             </span>
 
                              <div class="float-right">
-                                <a href="{{ route('asistenciadiarias.create') }}" class="btn btn-primary btn-sm float-right"  data-placement="left">
+                                <a href="{{ route('detallesucursals.create') }}" class="btn btn-primary btn-sm float-right"  data-placement="left">
                                   {{ __('Create New') }}
                                 </a>
                               </div>
@@ -36,30 +36,24 @@
                                     <tr>
                                         <th>No</th>
                                         
-										<th>Sucursal Bodega</th>
 										<th>Empleado Id</th>
-										<th>Fecha</th>
-										<th>Horario Entrada</th>
-										<th>Horario Salida</th>
+										<th>Sucursal Id</th>
 
                                         <th></th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach ($asistenciadiarias as $asistenciadiaria)
+                                    @foreach ($detallesucursals as $detallesucursal)
                                         <tr>
                                             <td>{{ ++$i }}</td>
                                             
-											<td>{{ $asistenciadiaria->sucursal_bodega }}</td>
-											<td>{{ $asistenciadiaria->empleado_id }}</td>
-											<td>{{ $asistenciadiaria->fecha }}</td>
-											<td>{{ $asistenciadiaria->horario_entrada }}</td>
-											<td>{{ $asistenciadiaria->horario_salida }}</td>
+											<td>{{ $detallesucursal->empleado_id }}</td>
+											<td>{{ $detallesucursal->sucursal_id }}</td>
 
                                             <td>
-                                                <form action="{{ route('asistenciadiarias.destroy',$asistenciadiaria->id) }}" method="POST">
-                                                    <a class="btn btn-sm btn-primary " href="{{ route('asistenciadiarias.show',$asistenciadiaria->id) }}"><i class="fa fa-fw fa-eye"></i> {{ __('Show') }}</a>
-                                                    <a class="btn btn-sm btn-success" href="{{ route('asistenciadiarias.edit',$asistenciadiaria->id) }}"><i class="fa fa-fw fa-edit"></i> {{ __('Edit') }}</a>
+                                                <form action="{{ route('detallesucursals.destroy',$detallesucursal->id) }}" method="POST">
+                                                    <a class="btn btn-sm btn-primary " href="{{ route('detallesucursals.show',$detallesucursal->id) }}"><i class="fa fa-fw fa-eye"></i> {{ __('Show') }}</a>
+                                                    <a class="btn btn-sm btn-success" href="{{ route('detallesucursals.edit',$detallesucursal->id) }}"><i class="fa fa-fw fa-edit"></i> {{ __('Edit') }}</a>
                                                     @csrf
                                                     @method('DELETE')
                                                     <button type="submit" class="btn btn-danger btn-sm"><i class="fa fa-fw fa-trash"></i> {{ __('Delete') }}</button>
@@ -72,7 +66,7 @@
                         </div>
                     </div>
                 </div>
-                {!! $asistenciadiarias->links() !!}
+                {!! $detallesucursals->links() !!}
             </div>
         </div>
     </div>

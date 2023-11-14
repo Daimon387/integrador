@@ -18,8 +18,8 @@ use Illuminate\Database\Eloquent\Model;
  *
  * @property Asistenciadiaria[] $asistenciadiarias
  * @property Cargo $cargo
+ * @property Detallesucursal[] $detallesucursals
  * @property Persona $persona
- * @property Sucursal[] $sucursals
  * @property Transaccione[] $transacciones
  * @property User $user
  * @package App
@@ -29,7 +29,6 @@ class Empleado extends Model
 {
     
     static $rules = [
-		'persona_id' => 'required',
 		'usuario_id' => 'required',
 		'cargo_id' => 'required',
 		'sueldo' => 'required',
@@ -62,19 +61,19 @@ class Empleado extends Model
     }
     
     /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function detallesucursals()
+    {
+        return $this->hasMany('App\Models\Detallesucursal', 'empleado_id', 'id');
+    }
+    
+    /**
      * @return \Illuminate\Database\Eloquent\Relations\HasOne
      */
     public function persona()
     {
         return $this->hasOne('App\Models\Persona', 'id', 'persona_id');
-    }
-    
-    /**
-     * @return \Illuminate\Database\Eloquent\Relations\HasMany
-     */
-    public function sucursals()
-    {
-        return $this->hasMany('App\Models\Sucursal', 'administrador_id', 'id');
     }
     
     /**
