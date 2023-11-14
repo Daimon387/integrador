@@ -23,9 +23,7 @@
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
-                <a class="navbar-brand" href="{{ url('/') }}">
-                    {{ config('app.name', 'Laravel') }}
-                </a>
+                <a class="navbar-brand" href="{{ url('/') }}">4 Brothers</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                     aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
@@ -47,31 +45,80 @@
                                     <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
                                 </li>
                             @endif
-                        @else
-                            @if ($e == 'Administrador')
+                            @if (Route::has('login'))
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('users.index') }}">usuarios</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('cargos.index') }}">Cargos</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('asistenciadiarias.index') }}">AsistenciaDiarias</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('personas.index') }}">Personas</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('clientes.index') }}">clientes</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('empleados.index') }}">empleados</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('sucursals.index') }}">Sucursales</a>
+                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
                                 </li>
                             @endif
-                            @if ($e == "Vendedor")
+                        @else
+                            @if ($e == 'Administrador')
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"
+                                        aria-expanded="false">Transacciones</a>
+                                    <ul class="dropdown-menu">
+                                        <li><a class="dropdown-item" href="{{ route('personas.index') }}">Personas</a></li>
+                                        <li><a class="dropdown-item" href="{{ route('clientes.index') }}">Clientes</a></li>
+                                        <li><a class="dropdown-item" href="{{ route('transacciones.index') }}">Transacciones</a></li>
+                                        <li><a class="dropdown-item" href="{{ route('pedidos.index') }}">Pedidos</a></li>
+                                        <li><a class="dropdown-item" href="{{ route('pagos.index') }}">Pagos</a></li>
+                                        <li><a class="dropdown-item" href="{{ route('detalletransaccions.index') }}">Detalle Transacciones</a></li>
+                                    </ul>
+                                </li>
+
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"
+                                        aria-expanded="false">Inventarios</a>
+                                    <ul class="dropdown-menu">
+                                        <li><a class="dropdown-item" href="{{ route('inventarios.index') }}">Inventarios</a></li>
+                                        <li><a class="dropdown-item" href="{{ route('transferenciainventarios.index') }}">Transferencia Inventarios</a></li>
+                                        <!--Aqui se agrega detalle transferencia-->
+                                      
+                                    </ul>
+                                </li>
+
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"
+                                        aria-expanded="false">Productos</a>
+                                    <ul class="dropdown-menu">
+                                        <li><a class="dropdown-item" href="{{ route('telas.index') }}">Telas</a></li>
+                                        <li><a class="dropdown-item" href="{{ route('cintas.index') }}">Cintas</a></li>
+                                        <li><a class="dropdown-item" href="{{ route('telacolores.index') }}">Telas Colores</a></li>
+                                        <li><a class="dropdown-item" href="{{ route('preferencias.index') }}">Preferencias</a></li>
+                                    </ul>
+                                </li>
+
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"
+                                        aria-expanded="false">Empleados</a>
+                                    <ul class="dropdown-menu">
+                                        <li><a class="dropdown-item" href="{{ route('personas.index') }}">Personas</a></li>
+                                        <li><a class="dropdown-item" href="{{ route('empleados.index') }}">Empleados</a></li>
+                                        <li><a class="dropdown-item" href="{{ route('asistenciadiarias.index') }}">Asistencia Diarias</a></li>
+                                        <li><a class="dropdown-item" href="{{ route('cargos.index') }}">Cargos</a></li>
+                                    </ul>
+                                </li>
+
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"
+                                        aria-expanded="false">Sucursales/Bodega</a>
+                                    <ul class="dropdown-menu">
+                                        <li><a class="dropdown-item" href="{{ route('sucursals.index') }}">Sucursales</a></li>
+                                        <li><a class="dropdown-item" href="{{ route('flujoefectivodiarios.index') }}">Flujo de efectivo diarios</a></li>
+                                        <!--aqui entra detalle sucursales-->
+                                    </ul>
+                                </li>
+
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"
+                                        aria-expanded="false">Otros</a>
+                                    <ul class="dropdown-menu">
+                                        <li><a class="dropdown-item" href="{{ route('metodopagos.index') }}">Metodos de pago</a></li>
+                                    </ul>
+                                </li>
+
+                                
+                            @endif
+                            @if ($e == 'Vendedor')
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{ route('cintas.index') }}">Cintas</a>
                                 </li>

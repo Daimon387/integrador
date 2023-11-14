@@ -13,12 +13,12 @@
         </div>
         <div class="form-group">
             {{ Form::label('fecha_llegada') }}
-            {{ Form::text('fecha_llegada', $asistenciadiaria->fecha_llegada, ['class' => 'form-control' . ($errors->has('fecha_llegada') ? ' is-invalid' : ''), 'placeholder' => 'Fecha Llegada']) }}
+            {{ Form::date('fecha_llegada', $asistenciadiaria->fecha_llegada, ['class' => 'form-control' . ($errors->has('fecha_llegada') ? ' is-invalid' : ''), 'placeholder' => 'Fecha Llegada']) }}
             {!! $errors->first('fecha_llegada', '<div class="invalid-feedback">:message</div>') !!}
         </div>
         <div class="form-group">
             {{ Form::label('fecha_salida') }}
-            {{ Form::text('fecha_salida', $asistenciadiaria->fecha_salida, ['class' => 'form-control' . ($errors->has('fecha_salida') ? ' is-invalid' : ''), 'placeholder' => 'Fecha Salida']) }}
+            {{ Form::date('fecha_salida', $asistenciadiaria->fecha_salida, ['class' => 'form-control' . ($errors->has('fecha_salida') ? ' is-invalid' : ''), 'placeholder' => 'Fecha Salida']) }}
             {!! $errors->first('fecha_salida', '<div class="invalid-feedback">:message</div>') !!}
         </div>
 

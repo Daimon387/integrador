@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('template_title')
-    Cargo
+    Detalletransferencia
 @endsection
 
 @section('content')
@@ -13,11 +13,11 @@
                         <div style="display: flex; justify-content: space-between; align-items: center;">
 
                             <span id="card_title">
-                                {{ __('Cargo') }}
+                                {{ __('Detalletransferencia') }}
                             </span>
 
                              <div class="float-right">
-                                <a href="{{ route('cargos.create') }}" class="btn btn-primary btn-sm float-right"  data-placement="left">
+                                <a href="{{ route('detalletransferencias.create') }}" class="btn btn-primary btn-sm float-right"  data-placement="left">
                                   {{ __('Create New') }}
                                 </a>
                               </div>
@@ -36,29 +36,29 @@
                                     <tr>
                                         <th>No</th>
                                         
-										<th>Nombre</th>
-										<th>Detalle Cargo</th>
-										<th>Cargo Superior</th>
+										<th>Sucursal Id</th>
+										<th>Transferencia Id</th>
+										<th>Detalle</th>
 
                                         <th></th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach ($cargos as $cargo)
+                                    @foreach ($detalletransferencias as $detalletransferencia)
                                         <tr>
                                             <td>{{ ++$i }}</td>
                                             
-											<td>{{ $cargo->nombre }}</td>
-											<td>{{ $cargo->detalle_cargo }}</td>
-                                            <td>{{ $cargo->cargo ? $cargo->cargo->nombre : 'Sin Cargo Superior' }}</td>
+											<td>{{ $detalletransferencia->sucursal_id }}</td>
+											<td>{{ $detalletransferencia->transferencia_id }}</td>
+											<td>{{ $detalletransferencia->detalle }}</td>
+
                                             <td>
-                                                <form action="{{ route('cargos.destroy', $cargo->id) }}" method="POST">
-                                                    <a class="btn btn-sm btn-primary" href="{{ route('cargos.edit', $cargo->id) }}"><i
-                                                            class="fa fa-fw fa-edit"></i> {{ __('Edit') }}</a>
+                                                <form action="{{ route('detalletransferencias.destroy',$detalletransferencia->id) }}" method="POST">
+                                                    <a class="btn btn-sm btn-primary " href="{{ route('detalletransferencias.show',$detalletransferencia->id) }}"><i class="fa fa-fw fa-eye"></i> {{ __('Show') }}</a>
+                                                    <a class="btn btn-sm btn-success" href="{{ route('detalletransferencias.edit',$detalletransferencia->id) }}"><i class="fa fa-fw fa-edit"></i> {{ __('Edit') }}</a>
                                                     @csrf
                                                     @method('DELETE')
-                                                    <button type="submit" class="btn btn-danger btn-sm"><i class="fa fa-fw fa-trash"></i>
-                                                        {{ __('Delete') }}</button>
+                                                    <button type="submit" class="btn btn-danger btn-sm"><i class="fa fa-fw fa-trash"></i> {{ __('Delete') }}</button>
                                                 </form>
                                             </td>
                                         </tr>
@@ -68,7 +68,7 @@
                         </div>
                     </div>
                 </div>
-                {!! $cargos->links() !!}
+                {!! $detalletransferencias->links() !!}
             </div>
         </div>
     </div>

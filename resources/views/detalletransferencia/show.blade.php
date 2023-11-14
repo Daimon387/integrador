@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('template_title')
-    {{ $sucursal->name ?? "{{ __('Show') Sucursal" }}
+    {{ $detalletransferencia->name ?? "{{ __('Show') Detalletransferencia" }}
 @endsection
 
 @section('content')
@@ -11,26 +11,26 @@
                 <div class="card">
                     <div class="card-header">
                         <div class="float-left">
-                            <span class="card-title">{{ __('Show') }} Sucursal</span>
+                            <span class="card-title">{{ __('Show') }} Detalletransferencia</span>
                         </div>
                         <div class="float-right">
-                            <a class="btn btn-primary" href="{{ route('sucursals.index') }}"> {{ __('Back') }}</a>
+                            <a class="btn btn-primary" href="{{ route('detalletransferencias.index') }}"> {{ __('Back') }}</a>
                         </div>
                     </div>
 
                     <div class="card-body">
                         
                         <div class="form-group">
-                            <strong>Direccion:</strong>
-                            {{ $sucursal->direccion }}
+                            <strong>Sucursal Id:</strong>
+                            {{ $detalletransferencia->sucursal_id }}
                         </div>
                         <div class="form-group">
-                            <strong>Ciudad:</strong>
-                            {{ $sucursal->ciudad }}
+                            <strong>Transferencia Id:</strong>
+                            {{ $detalletransferencia->transferencia_id }}
                         </div>
                         <div class="form-group">
-                            <strong>Tipo:</strong>
-                            {{ $sucursal->tipo }}
+                            <strong>Detalle:</strong>
+                            {{ $detalletransferencia->detalle }}
                         </div>
 
                     </div>

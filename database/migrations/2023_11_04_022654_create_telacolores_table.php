@@ -18,7 +18,7 @@ return new class extends Migration
             $table->foreign('cinta_id')->references('id')->on('cintas')->onDelete('cascade');
             $table->unsignedBigInteger('tela_id');
             $table->foreign('tela_id')->references('id')->on('telas')->onDelete('cascade');
-            $table->date('fecha_llegada');
+            $table->date('fecha_llegada')->nullable();
             $table->string('detalle')->nullable();
             $table->string('nro_rollo')->nullable();
             $table->string('numero')->nullable();

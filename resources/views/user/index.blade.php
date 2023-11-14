@@ -39,7 +39,7 @@
                                 </thead>
                                 <tbody>
                                     @php
-                                        $i = 0; // Inicializar la variable $i
+                                        $i = 0; 
                                     @endphp
                                     @foreach ($users as $user)
                                         @php
@@ -49,7 +49,16 @@
                                             <td>{{ $i }}</td>
                                             <td>{{ $user->email }}</td>
                                             <td>{{ $user->password }}</td>
-                                            
+                                            <td>
+                                                <form action="{{ route('users.destroy', $user->id) }}" method="POST">
+                                                    @method('DELETE')
+                                                    @csrf
+                                                    <button type="submit" class="btn btn-danger btn-sm">
+                                                        <i class="fa fa-fw fa-trash"></i>
+                                                        {{ __('Delete') }}
+                                                    </button>
+                                                </form>
+                                            </td>
                                         </tr>
                                     @endforeach
                                 </tbody>

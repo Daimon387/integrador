@@ -8,7 +8,6 @@ use Illuminate\Database\Eloquent\Model;
  * Class Sucursal
  *
  * @property $id
- * @property $administrador_id
  * @property $direccion
  * @property $ciudad
  * @property $tipo
@@ -16,13 +15,13 @@ use Illuminate\Database\Eloquent\Model;
  * @property $updated_at
  *
  * @property Asistenciadiaria[] $asistenciadiarias
- * @property Empleado $empleado
+ * @property Detallesucursal[] $detallesucursals
+ * @property Detalletransferencia[] $detalletransferencias
  * @property Flujoefectivodiario[] $flujoefectivodiarios
  * @property Inventario $inventario
  * @property Pago[] $pagos
  * @property Preciotelasucursal[] $preciotelasucursals
  * @property Transaccione[] $transacciones
- * @property Transferenciainventario[] $transferenciainventarios
  * @package App
  * @mixin \Illuminate\Database\Eloquent\Builder
  */
@@ -30,7 +29,6 @@ class Sucursal extends Model
 {
     
     static $rules = [
-		'administrador_id' => 'required',
 		'direccion' => 'required',
 		'ciudad' => 'required',
     ];
@@ -42,7 +40,7 @@ class Sucursal extends Model
      *
      * @var array
      */
-    protected $fillable = ['administrador_id','direccion','ciudad','tipo'];
+    protected $fillable = ['direccion','ciudad','tipo'];
 
 
     /**
@@ -54,11 +52,19 @@ class Sucursal extends Model
     }
     
     /**
-     * @return \Illuminate\Database\Eloquent\Relations\HasOne
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
-    public function empleado()
+    public function detallesucursals()
     {
-        return $this->hasOne('App\Models\Empleado', 'id', 'administrador_id');
+        return $this->hasMany('App\Models\Detallesucursal', 'sucursal_id', 'id');
+    }
+    
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function detalletransferencias()
+    {
+        return $this->hasMany('App\Models\Detalletransferencia', 'sucursal_id', 'id');
     }
     
     /**
@@ -99,14 +105,6 @@ class Sucursal extends Model
     public function transacciones()
     {
         return $this->hasMany('App\Models\Transaccione', 'sucursal_bodega', 'id');
-    }
-    
-    /**
-     * @return \Illuminate\Database\Eloquent\Relations\HasMany
-     */
-    public function transferenciainventarios()
-    {
-        return $this->hasMany('App\Models\Transferenciainventario', 'sucursal_bodega_origen', 'id');
     }
     
 

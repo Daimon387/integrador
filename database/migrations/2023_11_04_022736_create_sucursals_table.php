@@ -13,11 +13,6 @@ return new class extends Migration
     {
         Schema::create('sucursals', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('administrador_id');
-            $table->foreign('administrador_id')
-                ->references('id')
-                ->on('empleados')
-                ->onDelete('cascade');
             $table->string('direccion');
             $table->string('ciudad');
             $table->string('tipo')->nullable();

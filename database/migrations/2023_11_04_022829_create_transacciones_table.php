@@ -21,7 +21,7 @@ return new class extends Migration
             $table->foreign('cliente_id')->references('id')->on('clientes')->onDelete('cascade');
             $table->date('fecha');
             $table->float('total_venta');
-            $table->integer('productos_retirados');
+            $table->integer('productos_retirados')->nullable();
             $table->string('detalle')->nullable();
             $table->date('fecha_vencimiento')->nullable();
             $table->float('descuento')->nullable();

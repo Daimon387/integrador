@@ -5,113 +5,47 @@
 @endsection
 
 @section('content')
-<!--Aqui inicia la parte que puede ser editada-->
+    <!--Aqui inicia la parte que puede ser editada-->
 
-
-<table class="table">
-    <thead>
-      <tr>
-        <th scope="col">#</th>
-        <th scope="col">First</th>
-        <th scope="col">Last</th>
-        <th scope="col">Handle</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <th scope="row">1</th>
-        <td>Mark</td>
-        <td>Otto</td>
-        <td>@mdo</td>
-      </tr>
-      <tr>
-        <th scope="row">2</th>
-        <td>Jacob</td>
-        <td>Thornton</td>
-        <td>@fat</td>
-      </tr>
-      <tr>
-        <th scope="row">3</th>
-        <td colspan="2">Larry the Bird</td>
-        <td>@twitter</td>
-      </tr>
-    </tbody>
-  </table>
-
-
-
-
-
-
-    <div class="container-fluid">
-        <div class="row">     
-            <div class="col-sm-12">
-                <div class="card">
-                    <div class="card-header">
-                        <div style="display: flex; justify-content: space-between; align-items: center;">
-
-                            <span id="card_title">
-                                {{ __('Empleados') }}
-                            </span>
-
-                             <div class="float-right">
-                                <a href="{{ route('empleados.create') }}" class="btn btn-primary btn-sm float-right"  data-placement="left">
-                                  {{ __('Create New') }}
-                                </a>
-                              </div>
-                        </div>
-                    </div>
-                    @if ($message = Session::get('success'))
-                        <div class="alert alert-success">
-                            <p>{{ $message }}</p>
-                        </div>
-                    @endif
-
-                    <div class="card-body">
-                        <div class="table-responsive">
-                            <table class="table table-striped table-hover">
-                                <thead class="thead">
-                                    <tr>
-                                        <th>No</th>
-                                        
-										<th>Persona</th>
-										<th>Usuario</th>
-										<th>Cargo</th>
-										<th>Fecha Contratacion</th>
-										<th>Sueldo</th>
-
-                                        <th></th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    @foreach ($empleados as $empleado)
-                                        <tr>
-                                            <td>{{ ++$i }}</td>
-                                            
-											<td>{{ $empleado->persona_id }}</td>
-											<td>{{ $empleado->user->email }}</td>
-											<td>{{ $empleado->cargo->nombre }}</td>
-											<td>{{ $empleado->fecha_contratacion }}</td>
-											<td>{{ $empleado->sueldo }}</td>
-
-                                            <td>
-                                                <form action="{{ route('empleados.destroy',$empleado->id) }}" method="POST">
-                                                    <a class="btn btn-sm btn-primary " href="{{ route('empleados.show',$empleado->id) }}"><i class="fa fa-fw fa-eye"></i> {{ __('Show') }}</a>
-                                                    <a class="btn btn-sm btn-success" href="{{ route('empleados.edit',$empleado->id) }}"><i class="fa fa-fw fa-edit"></i> {{ __('Edit') }}</a>
-                                                    @csrf
-                                                    @method('DELETE')
-                                                    <button type="submit" class="btn btn-danger btn-sm"><i class="fa fa-fw fa-trash"></i> {{ __('Delete') }}</button>
-                                                </form>
-                                            </td>
-                                        </tr>
-                                    @endforeach
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                </div>
-                {!! $empleados->links() !!}
-            </div>
-        </div>
+    <div class="float-right offset-9">
+        <a href="{{ route('empleados.create') }}" class="btn btn-primary btn-sm float-right col-9" data-placement="left">
+            {{ __('Create New') }}
+        </a>
     </div>
+    <br>
+    <table class="table" style="margin-left: 20px;">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Persona</th>
+                <th scope="col">Usuario</th>
+                <th scope="col">Cargo</th>
+                <th scope="col">Fecha Contratacion</th>
+                <th scope="col">Sueldo</th>
+                <th scope="col">Accion</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach ($empleados as $empleado)
+                <tr>
+                    <td>{{ ++$i }}</td>
+                    <td>{{ $empleado->persona_id }}</td>
+                    <td>{{ $empleado->user->email }}</td>
+                    <td>{{ $empleado->cargo->nombre }}</td>
+                    <td>{{ $empleado->fecha_contratacion }}</td>
+                    <td>{{ $empleado->sueldo }}</td>
+                    <td>
+                        <form action="{{ route('empleados.destroy', $empleado->id) }}" method="POST">
+                            <a class="btn btn-sm btn-primary" href="{{ route('empleados.edit', $empleado->id) }}"><i
+                                    class="fa fa-fw fa-edit"></i> {{ __('Edit') }}</a>
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit" class="btn btn-danger btn-sm"><i class="fa fa-fw fa-trash"></i>
+                                {{ __('Delete') }}</button>
+                        </form>
+                    </td>
+                </tr>
+            @endforeach
+        </tbody>
+    </table>
 @endsection

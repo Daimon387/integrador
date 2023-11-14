@@ -36,7 +36,6 @@
                                     <tr>
                                         <th>No</th>
                                         
-										<th>Administrador Id</th>
 										<th>Direccion</th>
 										<th>Ciudad</th>
 										<th>Tipo</th>
@@ -49,7 +48,6 @@
                                         <tr>
                                             <td>{{ ++$i }}</td>
                                             
-											<td>{{ $sucursal->administrador_id }}</td>
 											<td>{{ $sucursal->direccion }}</td>
 											<td>{{ $sucursal->ciudad }}</td>
 											<td>{{ $sucursal->tipo }}</td>

@@ -15,8 +15,6 @@ return new class extends Migration
             $table->id();
             $table->timestamp('fecha_transaccion');
             $table->integer('cantidad_transferida');
-            $table->unsignedBigInteger('sucursal_bodega_origen');
-            $table->foreign('sucursal_bodega_origen')->references('id')->on('sucursals')->onDelete('cascade');
             $table->unsignedBigInteger('inventario_id');
             $table->foreign('inventario_id')->references('id')->on('inventarios')->onDelete('cascade');
             $table->string('estado');

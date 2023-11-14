@@ -17,8 +17,8 @@ return new class extends Migration
             $table->foreign('sucursal_bodega')->references('id')->on('sucursals')->onDelete('cascade');
             $table->unsignedBigInteger('empleado_id');
             $table->foreign('empleado_id')->references('id')->on('empleados')->onDelete('cascade');
-            $table->date('fecha_llegada');
-            $table->date('fecha_salida');
+            $table->timestamp('fecha_llegada');
+            $table->timestamp('fecha_salida');
             $table->timestamps();
         });
     }

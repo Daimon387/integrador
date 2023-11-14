@@ -17,7 +17,7 @@ return new class extends Migration
             $table->foreign('sucursal_bodega')->references('id')->on('sucursals')->onDelete('cascade');
             $table->integer('salida');
             $table->float('monto');
-            $table->time('hora');
+            $table->timestamp('hora');
             $table->string('detalle');
             $table->timestamps();
         });

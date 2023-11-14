@@ -40,18 +40,18 @@ Route::middleware(['auth', 'admin'])->group(function () {
     Route::resource('flujoefectivodiarios', \App\Http\Controllers\FlujoefectivodiarioController::class);
     Route::resource('preciotelasucursals', \App\Http\Controllers\PreciotelasucursalController::class);
     Route::resource('detalletransaccions', \App\Http\Controllers\DetalletransaccionController::class);
+    Route::resource('metodopagos', \App\Http\Controllers\MetodopagoController::class);
+    Route::resource('detalletransferencia', \App\Http\Controllers\DetalletransferenciaController::class);
     Route::resource('users', App\Http\Controllers\UserController::class);
 });
 
 Route::middleware(['auth', 'vendedor'])->group(function () {
-    Route::resource('telacolores', \App\Http\Controllers\TelacoloreController::class);
-    
+
     
 });
 
 Route::middleware(['auth', 'bodeguero'])->group(function () {
-    Route::resource('inventarios', \App\Http\Controllers\InventarioController::class);
-    Route::resource('metodopagos', \App\Http\Controllers\MetodopagoController::class);
+    
 });
 
 Route::middleware(['auth', 'admin_or_vendedor'])->group(function () {
