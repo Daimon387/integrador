@@ -9,7 +9,7 @@
 
     <div class="float-right offset-9">
         <a href="{{ route('empleados.create') }}" class="btn btn-primary btn-sm float-right col-9" data-placement="left">
-            {{ __('Create New') }}
+            {{ __('Crear Empleado') }}
         </a>
     </div>
     <br>
